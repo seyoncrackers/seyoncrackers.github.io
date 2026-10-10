@@ -388,13 +388,13 @@ const productGroups = [
     {
       name: "ONE SOUND CRACKERS (ஒற்றைச் சத்துப் பட்டாசுகள்)",
       products: [
-            { id: 1, category: "ONE SOUND CRACKERS (ஒற்றைச் சத்துப் பட்டாசுகள்)", name: '3.5" LAKSHMI (3.5 இன்ச் லட்சுமி)', per: "PKT", price: 75, offerRate: 15 },
-      { id: 2, category: "ONE SOUND CRACKERS (ஒற்றைச் சத்துப் பட்டாசுகள்)", name: '2.75" KURUVI (2.75 இன்ச் குருவி)', per: "PKT", price: 50, offerRate: 10 },
-      { id: 3, category: "ONE SOUND CRACKERS (ஒற்றைச் சத்துப் பட்டாசுகள்)", name: '4" LAKSHMI (4 இன்ச் லட்சுமி)', per: "PKT", price: 110, offerRate: 22 },
-      { id: 4, category: "ONE SOUND CRACKERS (ஒற்றைச் சத்துப் பட்டாசுகள்)", name: '4" GOLD LAKSHMI (4 இன்ச் கோல்டு லட்சுமி)', per: "PKT", price: 120, offerRate: 24 },
-      { id: 5, category: "ONE SOUND CRACKERS (ஒற்றைச் சத்துப் பட்டாசுகள்)", name: '4" DELUXE LAKSHMI (4 இன்ச் டீலக்ஸ் லட்சுமி)', per: "PKT", price: 180, offerRate: 36 },
-      { id: 6, category: "ONE SOUND CRACKERS (ஒற்றைச் சத்துப் பட்டாசுகள்)", name: '5" LAKSHMI (5 இன்ச் லட்சுமி)', per: "PKT", price: 220, offerRate: 44 },
-      { id: 7, category: "ONE SOUND CRACKERS (ஒற்றைச் சத்துப் பட்டாசுகள்)", name: '6" LAKSHMI (6 இன்ச் லட்சுமி)', per: "PKT", price: 250, offerRate: 50 }
+            { id: 1, category: "ONE SOUND CRACKERS (ஒற்றைச் சத்துப் பட்டாசுகள்)", name: '3.5inch LAKSHMI (3.5 இன்ச் லட்சுமி)', per: "PKT", price: 75, offerRate: 15 },
+      { id: 2, category: "ONE SOUND CRACKERS (ஒற்றைச் சத்துப் பட்டாசுகள்)", name: '2.75inch KURUVI (2.75 இன்ச் குருவி)', per: "PKT", price: 50, offerRate: 10 },
+      { id: 3, category: "ONE SOUND CRACKERS (ஒற்றைச் சத்துப் பட்டாசுகள்)", name: '4inch LAKSHMI (4 இன்ச் லட்சுமி)', per: "PKT", price: 110, offerRate: 22 },
+      { id: 4, category: "ONE SOUND CRACKERS (ஒற்றைச் சத்துப் பட்டாசுகள்)", name: '4inch GOLD LAKSHMI (4 இன்ச் கோல்டு லட்சுமி)', per: "PKT", price: 120, offerRate: 24 },
+      { id: 5, category: "ONE SOUND CRACKERS (ஒற்றைச் சத்துப் பட்டாசுகள்)", name: '4inch DELUXE LAKSHMI (4 இன்ச் டீலக்ஸ் லட்சுமி)', per: "PKT", price: 180, offerRate: 36 },
+      { id: 6, category: "ONE SOUND CRACKERS (ஒற்றைச் சத்துப் பட்டாசுகள்)", name: '5inch LAKSHMI (5 இன்ச் லட்சுமி)', per: "PKT", price: 220, offerRate: 44 },
+      { id: 7, category: "ONE SOUND CRACKERS (ஒற்றைச் சத்துப் பட்டாசுகள்)", name: '6inch LAKSHMI (6 இன்ச் லட்சுமி)', per: "PKT", price: 250, offerRate: 50 }
       ]
     },
     {
@@ -486,8 +486,8 @@ const productGroups = [
     {
       name: "TWINKLING STARS (மின்னும் நட்சத்திரங்கள்)",
       products: [
-       { id: 54, category: "TWINKLING STARS (மின்னும் நட்சத்திரங்கள்)", name: '1.5" TW STAR (1.5 இன்ச் ட்விங்கிள் ஸ்டார்)', per: "BOX", price: 150, offerRate: 30 },
-      { id: 55, category: "TWINKLING STARS (மின்னும் நட்சத்திரங்கள்)", name: '4" TW STAR (4 இன்ச் ட்விங்கிள் ஸ்டார்)', per: "BOX", price: 400, offerRate: 80 }
+       { id: 54, category: "TWINKLING STARS (மின்னும் நட்சத்திரங்கள்)", name: '1.5inch TW STAR (1.5 இன்ச் ட்விங்கிள் ஸ்டார்)', per: "BOX", price: 150, offerRate: 30 },
+      { id: 55, category: "TWINKLING STARS (மின்னும் நட்சத்திரங்கள்)", name: '4inch TW STAR (4 இன்ச் ட்விங்கிள் ஸ்டார்)', per: "BOX", price: 400, offerRate: 80 }
       ]
     },
     {
@@ -506,7 +506,7 @@ const productGroups = [
       name: "SMOKE CRACKERS (புகை பட்டாசுகள்)",
       products: [
         { id: 63, category: "SMOKE CRACKERS (புகை பட்டாசுகள்)", name: "RAINBOW SMOKE (ரெயின்போ புகை)", per: "BOX", price: 550, offerRate: 110 },
-      { id: 64, category: "SMOKE CRACKERS (புகை பட்டாசுகள்)", name: '4" HOLI SMOKE (4 இன்ச் ஹோலி புகை)', per: "BOX", price: 1000, offerRate: 200 },
+      { id: 64, category: "SMOKE CRACKERS (புகை பட்டாசுகள்)", name: '4inch HOLI SMOKE (4 இன்ச் ஹோலி புகை)', per: "BOX", price: 1000, offerRate: 200 },
       { id: 65, category: "SMOKE CRACKERS (புகை பட்டாசுகள்)", name: "PEACOCK SMOKE (மயில் புகை)", per: "BOX", price: 1250, offerRate: 250 },
       { id: 66, category: "SMOKE CRACKERS (புகை பட்டாசுகள்)", name: "15 SHOT SKY SMOKE SHOT (15 ஷாட் வானப் புகை)", per: "BOX", price: 2750, offerRate: 550 }
       ]
@@ -573,8 +573,8 @@ const productGroups = [
     {
       name: "TIN SHOWERS (டின் ஷவர்ஸ்)",
       products: [
-        { id: 96, category: "TIN SHOWERS (டின் ஷவர்ஸ்)", name: '4" TIN SHOWER (4 இன்ச் டின் ஷவர்)', per: "BOX", price: 600, offerRate: 120 },
-      { id: 97, category: "TIN SHOWERS (டின் ஷவர்ஸ்)", name: '6" TIN SHOWER (6 இன்ச் டின் ஷவர்)', per: "BOX", price: 800, offerRate: 160 },
+        { id: 96, category: "TIN SHOWERS (டின் ஷவர்ஸ்)", name: '4inch TIN SHOWER (4 இன்ச் டின் ஷவர்)', per: "BOX", price: 600, offerRate: 120 },
+      { id: 97, category: "TIN SHOWERS (டின் ஷவர்ஸ்)", name: '6inch TIN SHOWER (6 இன்ச் டின் ஷவர்)', per: "BOX", price: 800, offerRate: 160 },
       { id: 98, category: "TIN SHOWERS (டின் ஷவர்ஸ்)", name: "JOLLY BOBBY (ஜாலி பாபி)", per: "BOX", price: 1100, offerRate: 220 }
       ]
     },
@@ -590,19 +590,19 @@ const productGroups = [
     {
       name: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)",
       products: [
-         { id: 103, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '0.75" PENTA (5 PCS) (0.75 இன்ச் பென்டா 5 துண்டுகள்)', per: "BOX", price: 1100, offerRate: 220 },
-      { id: 104, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '0.75" MOJO CRACKLING (5 PCS) (0.75 இன்ச் மோஜோ கிராக்கிளிங் 5 துண்டுகள்)', per: "BOX", price: 1675, offerRate: 335 },
-      { id: 105, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '1" CHOTTA FANCY (1 இன்ச் சோட்டா ஃபேன்சி)', per: "BOX", price: 200, offerRate: 40 },
-      { id: 106, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '2" FANCY (1PC) - A GRADE (2 இன்ச் ஃபேன்சி A தரம், 1 துண்டு)', per: "BOX", price: 700, offerRate: 140 },
-      { id: 107, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '2" FANCY (1PC) - B GRADE (2 இன்ச் ஃபேன்சி B தரம், 1 துண்டு)', per: "BOX", price: 550, offerRate: 110 },
-      { id: 108, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '2" FANCY (3PCS) - A GRADE (2 இன்ச் ஃபேன்சி A தரம், 3 துண்டுகள்)', per: "BOX", price: 1650, offerRate: 330 },
-      { id: 109, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '2" FANCY (3PCS) - B GRADE (2 இன்ச் ஃபேன்சி B தரம், 3 துண்டுகள்)', per: "BOX", price: 1250, offerRate: 250 },
-      { id: 110, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '2.5" FANCY (3 STEPS) (2.5 இன்ச் ஃபேன்சி 3 படிகள்)', per: "BOX", price: 1500, offerRate: 300 },
-      { id: 111, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '3.5" FANCY A GRADE (3.5 இன்ச் ஃபேன்சி A தரம்)', per: "BOX", price: 1600, offerRate: 320 },
-      { id: 112, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '3.5" FANCY B GRADE (3.5 இன்ச் ஃபேன்சி B தரம்)', per: "BOX", price: 1350, offerRate: 270 },
-      { id: 113, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '4" FANCY (4 இன்ச் ஃபேன்சி)', per: "BOX", price: 1750, offerRate: 350 },
-      { id: 114, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '4" FANCY DOUBLE BALL (4 இன்ச் ஃபேன்சி டபுள் பால்)', per: "BOX", price: 2600, offerRate: 520 },
-      { id: 115, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '5" FANCY (5 இன்ச் ஃபேன்சி)', per: "BOX", price: 5000, offerRate: 1000 }
+         { id: 103, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '0.75inch PENTA (5 PCS) (0.75 இன்ச் பென்டா 5 துண்டுகள்)', per: "BOX", price: 1100, offerRate: 220 },
+      { id: 104, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '0.75inch MOJO CRACKLING (5 PCS) (0.75 இன்ச் மோஜோ கிராக்கிளிங் 5 துண்டுகள்)', per: "BOX", price: 1675, offerRate: 335 },
+      { id: 105, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '1inch CHOTTA FANCY (1 இன்ச் சோட்டா ஃபேன்சி)', per: "BOX", price: 200, offerRate: 40 },
+      { id: 106, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '2inch FANCY (1PC) - A GRADE (2 இன்ச் ஃபேன்சி A தரம், 1 துண்டு)', per: "BOX", price: 700, offerRate: 140 },
+      { id: 107, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '2inch FANCY (1PC) - B GRADE (2 இன்ச் ஃபேன்சி B தரம், 1 துண்டு)', per: "BOX", price: 550, offerRate: 110 },
+      { id: 108, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '2inch FANCY (3PCS) - A GRADE (2 இன்ச் ஃபேன்சி A தரம், 3 துண்டுகள்)', per: "BOX", price: 1650, offerRate: 330 },
+      { id: 109, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '2inch FANCY (3PCS) - B GRADE (2 இன்ச் ஃபேன்சி B தரம், 3 துண்டுகள்)', per: "BOX", price: 1250, offerRate: 250 },
+      { id: 110, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '2.5inch FANCY (3 STEPS) (2.5 இன்ச் ஃபேன்சி 3 படிகள்)', per: "BOX", price: 1500, offerRate: 300 },
+      { id: 111, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '3.5inch FANCY A GRADE (3.5 இன்ச் ஃபேன்சி A தரம்)', per: "BOX", price: 1600, offerRate: 320 },
+      { id: 112, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '3.5inch FANCY B GRADE (3.5 இன்ச் ஃபேன்சி B தரம்)', per: "BOX", price: 1350, offerRate: 270 },
+      { id: 113, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '4inch FANCY (4 இன்ச் ஃபேன்சி)', per: "BOX", price: 1750, offerRate: 350 },
+      { id: 114, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '4inch FANCY DOUBLE BALL (4 இன்ச் ஃபேன்சி டபுள் பால்)', per: "BOX", price: 2600, offerRate: 520 },
+      { id: 115, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '5inch FANCY (5 இன்ச் ஃபேன்சி)', per: "BOX", price: 5000, offerRate: 1000 }
       ]
     },
     {
@@ -675,7 +675,7 @@ const productGroups = [
     {
       name: "NEW ARRIVALS FANCY (புதிய ஃபேன்சி வரவுகள்)",
       products: [
-        { id: 148, category: "NEW ARRIVALS FANCY (புதிய ஃபேன்சி வரவுகள்)", name: '4" FANCY PIPE NIAGARA (4 இன்ச் ஃபேன்சி பைப் நயாகரா)', per: null, price: 2750, offerRate: 550 },
+        { id: 148, category: "NEW ARRIVALS FANCY (புதிய ஃபேன்சி வரவுகள்)", name: '4inch FANCY PIPE NIAGARA (4 இன்ச் ஃபேன்சி பைப் நயாகரா)', per: null, price: 2750, offerRate: 550 },
       { id: 149, category: "NEW ARRIVALS FANCY (புதிய ஃபேன்சி வரவுகள்)", name: "GANG BANG 16 SHOTS SPECIAL FUNCTION (கேங் பேங் 16 ஷாட்ஸ் ஸ்பெஷல் ஃபங்ஷன்)", per: null, price: 15000, offerRate: 3000 }
       ]
     },
