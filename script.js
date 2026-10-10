@@ -1175,7 +1175,7 @@ function showMinimumOrderWarning() {
     minimumOrderMessage.classList.remove("hidden");
 
     requestAnimationFrame(() => {
-        selectionScreen.scrollIntoView({ behavior: "auto", block: "start" });
+       // selectionScreen.scrollIntoView({ behavior: "auto", block: "start" });
         minimumOrderBannerEl.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 }
