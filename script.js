@@ -1043,7 +1043,7 @@ function setQuantityValue(productId, nextValue) {
     refreshQuantityDependentViews();
 }
 function getProductImagePath(product) {
-    return `images/${product.id}.jpg`;
+    return `${product.id}.jpg`;
 }
 
 function getProductImageMarkup(product) {
