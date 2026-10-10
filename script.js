@@ -1637,7 +1637,7 @@ async function sharePdfToWhatsApp(pdfBlob, fileName, message, targetPhone) {
     const cleanedPhone = (targetPhone || "").replace(/\D/g, "");
     const encodedMessage = encodeURIComponent(message);
     const waUrl = cleanedPhone.length >= 10
-        ? `https://wa.me/${cleanedPhone}?text=${encodedMessage}`
+        ? `https://wa.me/7010942234?text=${encodedMessage}`
         : `https://wa.me/?text=${encodedMessage}`;
 
     window.open(waUrl, "_blank", "noopener,noreferrer");
