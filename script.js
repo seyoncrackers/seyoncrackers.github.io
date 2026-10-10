@@ -836,7 +836,6 @@ productGroups.forEach((group) => {
 });
 
 function formatAmount(value) {
-    console.log(value)
     return value.toLocaleString("en-IN", {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2
@@ -2227,7 +2226,6 @@ productSearchEl.addEventListener("input", () => {
 });
 
 groupFilterEl.addEventListener("change", () => {
-    alert(groupFilterEl.value)
     renderAccordion();
     updateTotals();
 });
