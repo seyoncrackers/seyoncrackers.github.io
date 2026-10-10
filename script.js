@@ -1291,7 +1291,7 @@ function updateTotals() {
     reviewTotalQuantityEl.textContent = String(totalQuantity);
     reviewGrandTotalEl.textContent = formatAmount(grandTotal);
     reviewGrandOfferTotalEl.textContent = formatAmount(grandOfferTotal);
-    updateMinimumOrderProgress(grandOfferTotal);
+  //  updateMinimumOrderProgress(grandOfferTotal);
     updateMiniCartSummary(selectedProductCount, totalQuantity, grandTotal, grandOfferTotal);
 }
 
