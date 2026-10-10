@@ -1103,8 +1103,8 @@ function buildInvoiceRowMarkup(product, quantity, pricing, index) {
     return `
         <td data-label="SI.No">${index + 1}</td>
         <td data-label="Product Code">${String(product.id)}</td>
-        <td data-label="Group">${productGroupById.get(product.id)}</td>
-        <td data-label="Product Name">${product.name} (${product.per})</td>
+        <td data-label="Group">${productGroupById.get(product.id).replace(/\([^)]*\)/g, '').trim()}</td>
+        <td data-label="Product Name">${product.name.replace(/\([^)]*\)/g, '').trim()} (${product.per})</td>
         ${buildPricePairCell(pricing.showcasedOriginalPrice, pricing.customerOfferPrice, product.isFixedPrice)}
         <td data-label="Quantity">${quantity}</td>
         <td class="money amount-offer" data-label="Total Offer Amount">${formatAmount(pricing.rowOfferTotal)}</td>
