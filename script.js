@@ -1554,7 +1554,7 @@ function truncatePdfCellText(value, maxCharsPerLine = 34, maxLines = 2) {
 
 
 async function registerTamilFont(doc) {
-    const response = await fetch("./fonts/Noto_Sans_Tamil/static/NotoSansTamil-Regular.ttf");
+    const response = await fetch("NotoSansTamil-Regular.ttf");
 
     if (!response.ok) {
         throw new Error("Could not load the Tamil font");
