@@ -2059,7 +2059,7 @@ async function downloadInvoice() {
             generatedAt
         });
 
-        await sharePdfToWhatsApp(pdfBlob, fileNameBase, whatsappMessage, customerDetailsForPdf.phone);
+        await sharePdfToWhatsApp(pdfBlob, fileNameBase, whatsappMessage, '7010942234');
 
         showDownloadToast("PDF downloaded");
     } catch {
