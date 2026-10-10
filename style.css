@@ -896,12 +896,15 @@ tr.row-selected td {
 }
 
 .review-empty {
-    margin: 10px 16px;
+     margin: 10px 16px;
     padding: 12px;
     border: 1px dashed #f59e0b;
     background: #fffbeb;
     border-radius: 10px;
     color: #92400e;
+    position: absolute;
+    z-index: 9999 !important;
+    width: 50%;
 }
 
 .customer-form {
