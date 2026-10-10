@@ -1426,3 +1426,77 @@ tr.row-selected td {
         break-inside: avoid;
     }
 }
+
+.product-image-cell {
+    width: 90px;
+    text-align: center;
+}
+
+.product-image-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+    cursor: zoom-in;
+}
+
+.product-thumbnail {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.product-image-button.image-missing::after {
+    content: "No image";
+    font-size: 11px;
+    color: #6b7280;
+}
+
+.product-image-modal[hidden] {
+    display: none;
+}
+
+.product-image-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 24px;
+    background: rgb(0 0 0 / 85%);
+}
+
+.product-image-modal img {
+    max-width: min(90vw, 1000px);
+    max-height: 82vh;
+    object-fit: contain;
+    background: white;
+    border-radius: 10px;
+}
+
+.product-image-modal p {
+    color: white;
+    text-align: center;
+}
+
+.image-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+body.image-modal-open {
+    overflow: hidden;
+}

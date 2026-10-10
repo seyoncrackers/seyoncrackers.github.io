@@ -295,6 +295,14 @@
 
     <output id="downloadToast" class="toast hidden" aria-live="polite">Invoice downloaded</output>
 
+    <div id="productImageModal" class="product-image-modal"
+     role="dialog" aria-modal="true"
+     aria-label="Product image preview" hidden>
+    <button type="button" class="image-modal-close"
+            aria-label="Close image preview">&times;</button>
+    <img id="productImageModalContent" src="" alt="">
+    <p id="productImageModalCaption"></p>
+</div>
     <script src="script.js"></script>
 </body>
 
