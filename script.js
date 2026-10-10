@@ -1981,8 +1981,8 @@ async function downloadInvoice() {
             return [
                 String(index + 1),
                 String(product.id),
-                productGroupById.get(product.id) || "-",
-                product.name+' ('+product.per+')',
+                productGroupById.get(product.id).replace(/\([^)]*\)/g, '').trim() || "-",
+                product.name.replace(/\([^)]*\)/g, '').trim()+' ('+product.per+')',
                 pricePair,
                 String(quantity),
                 formatAmount(pricing.rowOfferTotal)
