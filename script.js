@@ -431,7 +431,7 @@ const productGroups = [
         { id: 26, category: "BOMBS (வெடிகள்)", name: "HYDRO (ஹைட்ரோ வெடி)", per: "BOX", price: 425, offerRate: 85 },
       { id: 27, category: "BOMBS (வெடிகள்)", name: "KING (கிங் வெடி)", per: "BOX", price: 500, offerRate: 100 },
       { id: 28, category: "BOMBS (வெடிகள்)", name: "CLASSIC (கிளாசிக் வெடி)", per: "BOX", price: 625, offerRate: 125 },
-      { id: 29, category: "BOMBS (வெடிகள்)", name: "AGNI/DIGITAL BOMB (அக்னி / டிஜிட்டல் வெடி)", per: "BOX", price: 1250, offerRate: 250 },
+      { id: 29, category: "BOMBS (வெடிகள்)", name: "AGNI/DIGITAL BOMB (அக்னி / டிஜிட்டல் வெடி)", per: "BOX", price: 0, offerRate: 0 },
       ]
     },
     {
@@ -528,7 +528,7 @@ const productGroups = [
       products: [
          { id: 74, category: "ROCKETS & HELICOPTERS (ராக்கெட்டுகள் மற்றும் ஹெலிகாப்டர்கள்)", name: "HELICOPTER (ஹெலிகாப்டர்)", per: "BOX", price: 550, offerRate: 110 },
       { id: 75, category: "ROCKETS & HELICOPTERS (ராக்கெட்டுகள் மற்றும் ஹெலிகாப்டர்கள்)", name: "DRONE (ட்ரோன்)", per: "BOX", price: 1000, offerRate: 200 },
-      { id: 76, category: "ROCKETS & HELICOPTERS (ராக்கெட்டுகள் மற்றும் ஹெலிகாப்டர்கள்)", name: "LUNIK ROCKET (லூனிக் ராக்கெட்)", per: "BOX", price: 600, offerRate: 120 },
+      { id: 76, category: "ROCKETS & HELICOPTERS (ராக்கெட்டுகள் மற்றும் ஹெலிகாப்டர்கள்)", name: "LUNIK ROCKET (லூனிக் ராக்கெட்)", per: "BOX", price: 0, offerRate: 0 },
       { id: 77, category: "ROCKETS & HELICOPTERS (ராக்கெட்டுகள் மற்றும் ஹெலிகாப்டர்கள்)", name: "WHISTLING ROCKET (விசில் ராக்கெட்)", per: "BOX", price: 750, offerRate: 150 }
       ]
     },
@@ -636,7 +636,7 @@ const productGroups = [
       { id: 131, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "30 SHOTS PEACOCK DANCE (30 ஷாட்ஸ் மயில் நடனம்)", per: "BOX", price: 0, offerRate: 0 },
       { id: 132, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "5 X 10 (50 SHOTS) (5 x 10, மொத்தம் 50 ஷாட்ஸ்)", per: "BOX", price: 12500, offerRate: 2500 },
       { id: 133, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "10 X 10 (100 SHOTS) (10 x 10, மொத்தம் 100 ஷாட்ஸ்)", per: "BOX", price: 25000, offerRate: 5000 },
-      { id: 134, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "GUN SHOOTER (கன் ஷூட்டர்)", per: "BOX", price: 2750, offerRate: 550 }
+      { id: 134, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "GUN SHOOTER (கன் ஷூட்டர்)", per: "BOX", price: 0, offerRate: 0 }
       ]
     },
     {
