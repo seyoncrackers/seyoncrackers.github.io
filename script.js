@@ -698,12 +698,12 @@ const productGroups = [
     {
       name: "GIFT BOX & COMBO BACK (கிஃப்ட் பாக்ஸ் மற்றும் காம்போ பேக்)",
       products: [
-         { id: 156, category: "GIFT BOX & COMBO BACK (கிஃப்ட் பாக்ஸ் மற்றும் காம்போ பேக்)", name: "GIFT BOX 25 ITEMS (NET RATE) (25 பொருட்கள் கிஃப்ட் பாக்ஸ், நிகர விலை)", per: "BOX", price: 0, offerRate: 500 },
-      { id: 157, category: "GIFT BOX & COMBO BACK (கிஃப்ட் பாக்ஸ் மற்றும் காம்போ பேக்)", name: "GIFT BOX 35 ITEMS (NET RATE) (35 பொருட்கள் கிஃப்ட் பாக்ஸ், நிகர விலை)", per: "BOX", price: 0, offerRate: 750 },
-      { id: 158, category: "GIFT BOX & COMBO BACK (கிஃப்ட் பாக்ஸ் மற்றும் காம்போ பேக்)", name: "GIFT BOX 50 ITEMS (NET RATE) (50 பொருட்கள் கிஃப்ட் பாக்ஸ், நிகர விலை)", per: "BOX", price: 0, offerRate: 1000 },
-      { id: 159, category: "GIFT BOX & COMBO BACK (கிஃப்ட் பாக்ஸ் மற்றும் காம்போ பேக்)", name: "COMBO BACK A (காம்போ பேக் A)", per: "BOX", price: 0, offerRate: 3000 },
-      { id: 160, category: "GIFT BOX & COMBO BACK (கிஃப்ட் பாக்ஸ் மற்றும் காம்போ பேக்)", name: "COMBO BACK B (காம்போ பேக் B)", per: "BOX", price: 0, offerRate: 5000 },
-      { id: 161, category: "GIFT BOX & COMBO BACK (கிஃப்ட் பாக்ஸ் மற்றும் காம்போ பேக்)", name: "COMBO BACK C (காம்போ பேக் C)", per: "BOX", price: 0, offerRate: 10000 }
+         { id: 156, category: "GIFT BOX & COMBO BACK (கிஃப்ட் பாக்ஸ் மற்றும் காம்போ பேக்)", name: "GIFT BOX 25 ITEMS (NET RATE) (25 பொருட்கள் கிஃப்ட் பாக்ஸ், நிகர விலை)", per: "BOX", price: 0, offerRate: 700 },
+      { id: 157, category: "GIFT BOX & COMBO BACK (கிஃப்ட் பாக்ஸ் மற்றும் காம்போ பேக்)", name: "GIFT BOX 35 ITEMS (NET RATE) (35 பொருட்கள் கிஃப்ட் பாக்ஸ், நிகர விலை)", per: "BOX", price: 0, offerRate: 950 },
+      { id: 158, category: "GIFT BOX & COMBO BACK (கிஃப்ட் பாக்ஸ் மற்றும் காம்போ பேக்)", name: "GIFT BOX 50 ITEMS (NET RATE) (50 பொருட்கள் கிஃப்ட் பாக்ஸ், நிகர விலை)", per: "BOX", price: 0, offerRate: 1600 },
+      { id: 159, category: "GIFT BOX & COMBO BACK (கிஃப்ட் பாக்ஸ் மற்றும் காம்போ பேக்)", name: "COMBO BACK A (காம்போ பேக் A)", per: "BOX", price: 0, offerRate: 4000 },
+      { id: 160, category: "GIFT BOX & COMBO BACK (கிஃப்ட் பாக்ஸ் மற்றும் காம்போ பேக்)", name: "COMBO BACK B (காம்போ பேக் B)", per: "BOX", price: 0, offerRate: 7000 },
+      { id: 161, category: "GIFT BOX & COMBO BACK (கிஃப்ட் பாக்ஸ் மற்றும் காம்போ பேக்)", name: "COMBO BACK C (காம்போ பேக் C)", per: "BOX", price: 0, offerRate: 12000 }
       ]
     },
   ];
