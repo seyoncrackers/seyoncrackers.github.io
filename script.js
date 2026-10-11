@@ -632,7 +632,7 @@ const productGroups = [
       name: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)",
       products: [
          { id: 129, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "6 SHOTS LOVE DOVE (6 ஷாட்ஸ் லவ் டவ்)", per: "BOX", price: 1000, offerRate: 200 },
-      { id: 130, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "10 SHOTS WITH SKY CHAKKAR (10 ஷாட்ஸ் வானச் சக்கரத்துடன்)", per: "BOX", price: 1400, offerRate: 280 },
+      { id: 130, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "10 SHOTS WITH SKY CHAKKAR (10 ஷாட்ஸ் வானச் சக்கரத்துடன்)", per: "BOX", price: 0, offerRate: 0 },
       { id: 131, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "30 SHOTS PEACOCK DANCE (30 ஷாட்ஸ் மயில் நடனம்)", per: "BOX", price: 0, offerRate: 0 },
       { id: 132, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "5 X 10 (50 SHOTS) (5 x 10, மொத்தம் 50 ஷாட்ஸ்)", per: "BOX", price: 12500, offerRate: 2500 },
       { id: 133, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "10 X 10 (100 SHOTS) (10 x 10, மொத்தம் 100 ஷாட்ஸ்)", per: "BOX", price: 25000, offerRate: 5000 },
