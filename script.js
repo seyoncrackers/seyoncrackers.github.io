@@ -431,7 +431,7 @@ const productGroups = [
         { id: 26, category: "BOMBS (வெடிகள்)", name: "HYDRO (ஹைட்ரோ வெடி)", per: "BOX", price: 425, offerRate: 85 },
       { id: 27, category: "BOMBS (வெடிகள்)", name: "KING (கிங் வெடி)", per: "BOX", price: 500, offerRate: 100 },
       { id: 28, category: "BOMBS (வெடிகள்)", name: "CLASSIC (கிளாசிக் வெடி)", per: "BOX", price: 625, offerRate: 125 },
-      { id: 29, category: "BOMBS (வெடிகள்)", name: "AGNI/DIGITAL BOMB (அக்னி / டிஜிட்டல் வெடி)", per: "BOX", price: 0, offerRate: 0 },
+      { id: 29, category: "BOMBS (வெடிகள்)", name: "AGNI/DIGITAL BOMB (அக்னி / டிஜிட்டல் வெடி)", per: "BOX", price: 1250, offerRate: 250 },
       ]
     },
     {
