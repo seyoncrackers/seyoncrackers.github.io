@@ -1,389 +1,3 @@
-// const productGroups = [
-//     {
-//         name: "SOUND CRACKERS",
-//         products: [
-//             { id: 1, name: "4\" LAKSHMI DELUXE,BHEEM,SPIDER", per: "1 Pkt", price: 66 },
-//             { id: 2, name: "4\" LAKSHMI,PARROT,SPIDER,BHEEM", per: "1 Pkt", price: 55 },
-//             { id: 3, name: "3 1/2\" LAKSHMI,BHEEM,SPIDER", per: "1 Pkt", price: 36 },
-//             { id: 4, name: "2 3/4\" KURUK", per: "1 Pkt", price: 30 },
-//             { id: 5, name: "TWO SOUND CRACKERS", per: "1 Pkt", price: 72 },
-//             { id: 6, name: "TWO SOUND GREEN", per: "1 Pkt", price: 132 }
-//         ]
-//     },
-
-//     {
-//         name: "CHORSA CRACKERS",
-//         products: [
-//             { id: 7, name: "28 CHORSA TURKEY,TAJ", per: "1 Pkt", price: 41 },
-//             { id: 8, name: "56 CHORSA TURKEY,TAJ", per: "1 Pkt", price: 82 }
-//         ]
-//     },
-
-//     {
-//         name: "GAINT CRACKERS",
-//         products: [
-//             { id: 9, name: "28 SUPER GAINT TIGER,TAJ", per: "1 Pkt", price: 63 },
-//             { id: 10, name: "56 SUPER GAINT TIGER,TAJ", per: "1 Pkt", price: 126 }
-//         ]
-//     },
-
-//     {
-//         name: "DELUXE CRACKERS",
-//         products: [
-//             { id: 11, name: "24 DELUXE", per: "1 Pkt", price: 122 },
-//             { id: 12, name: "28 DELUXE", per: "1 Pkt", price: 145 },
-//             { id: 13, name: "50 DELUXE", per: "1 Pkt", price: 270 }
-//         ]
-//     },
-
-//     {
-//         name: "BUJILI CRACKERS",
-//         products: [
-//             { id: 14, name: "RED BUJILI (100 PCS)", per: "1 Bag", price: 81 },
-//             { id: 15, name: "STRIPPED BUJILI (100 PCS)", per: "1 Bag", price: 87 },
-//             { id: 16, name: "RED BUJILI (50 PCS)", per: "1 Bag", price: 41 },
-//             { id: 17, name: "STRIPPED BUJILI (50 PCS)", per: "1 Bag", price: 45 },
-//             { id: 18, name: "JOLLY 100", per: "1 Box", price: 126 },
-//             { id: 19, name: "FANTASY 200", per: "1 Box", price: 252 },
-//             { id: 20, name: "ENJOY 300", per: "1 Box", price: 378 },
-//             { id: 21, name: "BEAUTY 600", per: "1 Box", price: 756 },
-//             { id: 22, name: "SHINY 1000", per: "1 Box", price: 945 },
-//             { id: 23, name: "JAMMAI 2000", per: "1 Box", price: 1890 },
-//             { id: 24, name: "DISNEY 3000", per: "1 Box", price: 2835 },
-//             { id: 25, name: "LUXURY 5000", per: "1 Box", price: 4725 },
-//             { id: 26, name: "ROYAL GALAXY 10000", per: "1 Box", price: 9450 }
-//         ]
-//     },
-
-//     {
-//         name: "BOMBS",
-//         products: [
-//             { id: 27, name: "BULLET BOMB", per: "1 Box", price: 66 },
-//             { id: 28, name: "BATMEN BOMB", per: "1 Box", price: 102 },
-//             { id: 29, name: "HYDRO BOMB GREEN", per: "1 Box", price: 153 },
-//             { id: 30, name: "JURRASIC BOMB (3PLY)", per: "1 Box", price: 231 },
-//             { id: 31, name: "TRACER BOMB GREEN (5PLY)", per: "1 Box", price: 270 },
-//             { id: 32, name: "DIGITAL BOMB GREEN", per: "1 Box", price: 390 }
-//         ]
-//     },
-
-//     {
-//         name: "GROUND CHAKKARS",
-//         products: [
-//             { id: 33, name: "GROUND CHAKKAR BIG (25PCS)", per: "1 Box", price: 195 },
-//             { id: 34, name: "GROUND CHAKKAR BIG (10 PCS)", per: "1 Box", price: 97 },
-//             { id: 35, name: "GROUND CHAKKAR ASOKA", per: "1 Box", price: 130 },
-//             { id: 36, name: "GROUND CHAKKAR SPECIAL", per: "1 Box", price: 160 },
-//             { id: 37, name: "GROUND CHAKKAR DELUXE", per: "1 Box", price: 317 },
-//             { id: 38, name: "SPINNER SPECIAL", per: "1 Box", price: 168 },
-//             { id: 39, name: "SPINNER DELUXE", per: "1 Box", price: 327 }
-//         ]
-//     },
-
-//     {
-//         name: "FLOWER POTS",
-//         products: [
-//             { id: 40, name: "FLOWER POTS SMALL GREEN", per: "1 Box", price: 130 },
-//             { id: 41, name: "FLOWER POTS BIG GREEN", per: "1 Box", price: 180 },
-//             { id: 42, name: "FLOWER POTS SPECIAL GREEN", per: "1 Box", price: 231 },
-//             { id: 43, name: "FLOWER POTS ASOKA GREEN", per: "1 Box", price: 317 },
-//             { id: 44, name: "FLOWER POTS DELUXE GREEN 5PCS", per: "1 Box", price: 372 },
-//             { id: 45, name: "FLOWER POTS SUPER DELUXE 2PCS", per: "1 Box", price: 465 },
-//             { id: 46, name: "COLOUR KOT", per: "1 Box", price: 573 },
-//             { id: 47, name: "COLOUR KOT DELUXE", per: "1 Box", price: 706 },
-//             { id: 48, name: "GANGA JAMUNA", per: "1 Box", price: 149 }
-//         ]
-//     },
-
-//     {
-//         name: "CHILDREN'S SPECIAL",
-//         products: [
-//             { id: 49, name: "1 1/2\" TWINKLING STAR", per: "1 Box", price: 72 },
-//             { id: 50, name: "4\" TWINKLING STAR DELUXE", per: "1 Box", price: 162 },
-//             { id: 51, name: "JIL JIL", per: "1 Unit", price: 662 },
-//             { id: 52, name: "7\" PENCIL", per: "1 Box", price: 72 },
-//             { id: 53, name: "12\" DELUXE PENCIL", per: "1 Box", price: 160 },
-//             { id: 54, name: "15\" ALADDIN PENCIL", per: "1 Box", price: 252 }
-//         ]
-//     },
-
-//     {
-//         name: "ROCKETS",
-//         products: [
-//             { id: 55, name: "COLOUR ROCKET", per: "1 Box", price: 144 },
-//             { id: 56, name: "ROCKET BOMB", per: "1 Box", price: 149 },
-//             { id: 57, name: "LUNIK EXPRESS", per: "1 Box", price: 263 },
-//             { id: 58, name: "DOUBLE SOUND ROCKET", per: "1 Box", price: 279 },
-//             { id: 59, name: "THREE SOUND ROCKET", per: "1 Box", price: 290 }
-//         ]
-//     },
-
-//     {
-//         name: "MEGA ROCKET",
-//         products: [
-//             { id: 60, name: "NIRBHIK ROCKET", per: "1 Box", price: 838 },
-//             { id: 61, name: "AGNI ROCKET", per: "1 Box", price: 838 },
-//             { id: 62, name: "BRAMOTS ROCKET", per: "1 Box", price: 838 },
-//             { id: 63, name: "PRITHIVI ROCKET", per: "1 Box", price: 838 },
-//             { id: 64, name: "SHOURYA ROCKET", per: "1 Box", price: 838 }
-//         ]
-//     },
-
-//     {
-//         name: "AERIALS",
-//         products: [
-//             { id: 65, name: "DARLING DANCER", per: "1 Box", price: 281 },
-//             { id: 66, name: "MEGA GREEN", per: "1 Box", price: 585 },
-//             { id: 67, name: "7 COLOUR SHOTS (5PCS)", per: "1 Box", price: 270 },
-//             { id: 68, name: "EMERALD ROBO (5PCS)", per: "1 Box", price: 306 },
-//             { id: 69, name: "SILVER ROBO (5PCS)", per: "1 Box", price: 306 },
-//             { id: 70, name: "RUSSIA ROBO (5PCS)", per: "1 Box", price: 306 },
-//             { id: 71, name: "SKY PENDA", per: "1 Box", price: 396 }
-//         ]
-//     },
-
-//     {
-//         name: "SOUND NOVELTIES",
-//         products: [
-//             { id: 72, name: "CHUT PUT", per: "1 Box", price: 138 },
-//             { id: 73, name: "MAGIC POPS", per: "1 Box", price: 95 },
-//             { id: 74, name: "GOLDEN STAR 5 PCS", per: "1 Box", price: 179 },
-//             { id: 75, name: "SILVER STAR 5 PCS", per: "1 Box", price: 179 },
-//             { id: 76, name: "WONDER STAR 5 PCS", per: "1 Box", price: 179 },
-//             { id: 77, name: "HELICOPTER", per: "1 Box", price: 630 },
-//             { id: 78, name: "MILKY WITHY", per: "1 Box", price: 224 },
-//             { id: 79, name: "JOLLY RED", per: "1 Box", price: 224 },
-//             { id: 80, name: "DOLLY GREEN", per: "1 Box", price: 224 },
-//             { id: 81, name: "BUBBLY GOLD", per: "1 Box", price: 224 },
-//             { id: 82, name: "DISPIN", per: "1 Box", price: 364 },
-//             { id: 83, name: "DISCO WHEEL", per: "1 Box", price: 393 },
-//             { id: 84, name: "CRACKTAIL(Fountain Crackling 3pcs)", per: "1 Box", price: 889 }
-//         ]
-//     },
-
-//     {
-//         name: "SKY SHOT COLOURS WINDOW",
-//         products: [
-//             { id: 85, name: "LAZER SHOW", per: "1 Box", price: 342 },
-//             { id: 86, name: "ONLINE", per: "1 Box", price: 342 },
-//             { id: 87, name: "SKY KING", per: "1 Box", price: 342 },
-//             { id: 88, name: "SKY GEL", per: "1 Box", price: 342 },
-//             { id: 89, name: "SKY DANCER", per: "1 Box", price: 342 },
-//             { id: 90, name: "STAR WAR", per: "1 Box", price: 342 }
-//         ]
-//     },
-
-//     {
-//         name: "1 3/4\" FANCY (3 PIECES PACKING)",
-//         products: [
-//             { id: 91, name: "GREEN ANGELS", per: "1 Box", price: 737 },
-//             { id: 92, name: "MUST U MUST", per: "1 Box", price: 737 },
-//             { id: 93, name: "LAL MARCHI", per: "1 Box", price: 737 },
-//             { id: 94, name: "PALM TREE", per: "1 Box", price: 737 },
-//             { id: 95, name: "RANGELA", per: "1 Box", price: 737 },
-//             { id: 96, name: "CITY RAIDER", per: "1 Box", price: 737 },
-//             { id: 97, name: "HULK WAR (CRACKLING 3 PCS)", per: "1 Box", price: 810 }
-//         ]
-//     },
-
-//     {
-//         name: "RANG DHARBAR (2\" FANCY SINGLE PCS)",
-//         products: [
-//             { id: 98, name: "GREEN CROSS", per: "1 Box", price: 414 },
-//             { id: 99, name: "RED CROSS", per: "1 Box", price: 414 },
-//             { id: 100, name: "GOLDEN ANGEL", per: "1 Box", price: 414 },
-//             { id: 101, name: "STAR NIGHT", per: "1 Box", price: 414 },
-//             { id: 102, name: "RANGA DE BESNTI", per: "1 Box", price: 414 },
-//             { id: 103, name: "CHINY DELIGHT", per: "1 Box", price: 414 },
-//             { id: 104, name: "VIP", per: "1 Box", price: 414 }
-//         ]
-//     },
-
-//     {
-//         name: "2\" FANCY (3 PIECES WITH MULTI COLOUR PACKING)",
-//         products: [
-//             { id: 105, name: "FOLK", per: "1 Box", price: 855 },
-//             { id: 106, name: "SWING", per: "1 Box", price: 855 },
-//             { id: 107, name: "GYPSY", per: "1 Box", price: 855 },
-//             { id: 108, name: "BALLE", per: "1 Box", price: 855 }
-//         ]
-//     },
-
-//     {
-//         name: "2 3/4\" FANCY (2 PCS PACKING)",
-//         products: [
-//             { id: 109, name: "JUNGLE BEATS (GREEN)", per: "1 Box", price: 1009 },
-//             { id: 110, name: "THUNDER HUNTER (RED)", per: "1 Box", price: 1009 },
-//             { id: 111, name: "BAD SOLIDER (RED & GREEN)", per: "1 Box", price: 1009 },
-//             { id: 112, name: "FUZZY GOLD (YELLOW)", per: "1 Box", price: 1009 },
-//             { id: 113, name: "PEARL DROPS (WHITE)", per: "1 Box", price: 1009 },
-//             { id: 114, name: "NESCAFE (SUN RISE FUNCTION)", per: "1 Box", price: 1009 },
-//             { id: 115, name: "GOLDENHARVEST(Gold&Crackling)", per: "1 Box", price: 1009 },
-//             { id: 116, name: "MARS ATTACK (Red with Crackling)", per: "1 Box", price: 1009 },
-//             { id: 117, name: "MOON BLAST (White with crackling)", per: "1 Box", price: 1009 }
-//         ]
-//     },
-
-//     {
-//         name: "AKASH MEA (3 1/2\" FANCY)",
-//         products: [
-//             { id: 118, name: "BALLE BALLE", per: "1 Box", price: 801 },
-//             { id: 119, name: "GREEN SHOWER", per: "1 Box", price: 801 },
-//             { id: 120, name: "LAAL HARA", per: "1 Box", price: 801 },
-//             { id: 121, name: "WHITE CHICKS", per: "1 Box", price: 801 },
-//             { id: 122, name: "CRACKLING STAR", per: "1 Box", price: 801 },
-//             { id: 123, name: "GALAXY GOLD", per: "1 Box", price: 801 },
-//             { id: 124, name: "SILVER TRICKS", per: "1 Box", price: 801 }
-//         ]
-//     },
-
-//     {
-//         name: "1/2\" FANCY DOUBLE BALL FUNCTION",
-//         products: [
-//             { id: 125, name: "BRAVE (Double Ball Function)", per: "1 Box", price: 1233 },
-//             { id: 126, name: "CLARA (Double Ball Function)", per: "1 Box", price: 1233 },
-//             { id: 127, name: "HERO (Double Ball Function)", per: "1 Box", price: 1233 },
-//             { id: 128, name: "LORAX (Double Ball Function)", per: "1 Box", price: 1233 },
-//             { id: 129, name: "RIO (Double Ball Function)", per: "1 Box", price: 1233 },
-//             { id: 130, name: "MOANA (Double Ball Function)", per: "1 Box", price: 1233 }
-//         ]
-//     },
-
-//     {
-//         name: "3 1/2\" FANCY (7 STEP FUNCTION)",
-//         products: [
-//             { id: 131, name: "AGRA INDIA (7 STEP FUNCTION)", per: "1 Box", price: 1080 },
-//             { id: 132, name: "MASCO RUSSIA (7 STEP FUNCTION)", per: "1 Box", price: 1080 },
-//             { id: 133, name: "PARIS FRANCE (7 STEP FUNCTION)", per: "1 Box", price: 1080 },
-//             { id: 134, name: "EGYPT (7 STEP FUNCTION)", per: "1 Box", price: 1080 },
-//             { id: 135, name: "NEWYORK (7 STEP FUNCTION)", per: "1 Box", price: 1080 },
-//             { id: 136, name: "ROME ITALY (7 STEP FUNCTION)", per: "1 Box", price: 1080 }
-//         ]
-//     },
-
-//     {
-//         name: "4\" FANCY (2 PCS PACKING WINDOW)",
-//         products: [
-//             { id: 137, name: "DING DONG", per: "1 Box", price: 2403 },
-//             { id: 138, name: "JIM JAM", per: "1 Box", price: 2403 },
-//             { id: 139, name: "ZIG ZAG", per: "1 Box", price: 2403 },
-//             { id: 140, name: "YIN YANG", per: "1 Box", price: 2403 }
-//         ]
-//     },
-
-//     {
-//         name: "5\" FANCY (2 PCS PACKING WINDOW)",
-//         products: [
-//             { id: 141, name: "APPLE", per: "1 Box", price: 3213 },
-//             { id: 142, name: "GRAPES", per: "1 Box", price: 3213 },
-//             { id: 143, name: "MANGO", per: "1 Box", price: 3213 },
-//             { id: 144, name: "PINEAPPLE", per: "1 Box", price: 3213 }
-//         ]
-//     },
-
-//     {
-//         name: " NEW ARRIVAL",
-//         products: [
-//             { id: 145, name: "CHUBBY DUBBIES", per: "1 PCS", price: 207 },
-//             { id: 146, name: "RIO (FOUNTAIN MINI)", per: "1 PCS", price: 90 },
-//             { id: 147, name: "KASHMORA", per: "1 PCS", price: 343 },
-//             { id: 148, name: "PEACOCK", per: "1 Box", price: 378 },
-//             { id: 149, name: "PEACOCK BIG", per: "1 Box", price: 1058 },
-//             { id: 150, name: "BARBIE", per: "1 Box", price: 633 },
-//             { id: 151, name: "VIVO", per: "1 Box", price: 238 },
-//             { id: 152, name: "JIGGLERS", per: "1 Box", price: 809 },
-//             { id: 153, name: "TURBO SKY", per: "1 Box", price: 500 },
-//             { id: 154, name: "TRI COLOUR FOUNTAIN", per: "1 Box", price: 945 }
-//         ]
-//     },
-
-//     {
-//         name: "MULTI COLOURS AERIAL",
-//         products: [
-//             { id: 155, name: "12 COLOUR STARS", per: "1 Box", price: 438 },
-//             { id: 156, name: "AERIAL CRACKLING", per: "1 Box", price: 473 },
-//             { id: 157, name: "PUBG 15 SHOTS", per: "1 Box", price: 843 },
-//             { id: 158, name: "MAZA 30 SHOT / POP 30 SHOTS", per: "1 Box", price: 1558 },
-//             { id: 159, name: "FESTIVAL FAN 25 SHOTS", per: "1 Box", price: 893 },
-//             { id: 160, name: "JUBLEE 25 SHOT", per: "1 Box", price: 1440 },
-//             { id: 161, name: "CARNIVAL 50 SHOT", per: "1 Box", price: 1685 },
-//             { id: 162, name: "HOLIWALI 50 SHOTS", per: "1 Box", price: 2601 },
-//             { id: 163, name: "JAMAI 60 SHOTS/RUSH 60 SHOT", per: "1 Box", price: 3117 },
-//             { id: 164, name: "GANGWAR 60 SHOTS", per: "1 Box", price: 3457 },
-//             { id: 165, name: "BOSS KI MASS 100 SHOTS", per: "1 Box", price: 5220 },
-//             { id: 166, name: "NIGHT RIDER 120 SHOTS", per: "1 Box", price: 6234 },
-//             { id: 167, name: "ENJOY 240 SHOTS", per: "1 Box", price: 12478 },
-//             { id: 168, name: "PYRO NIGHT 32 SHOTS", per: "1 Box", price: 11340 },
-//             { id: 169, name: "PARADISE 20 SHOT", per: "1 Box", price: 7088 },
-//             { id: 170, name: "TRIX SHOT (3*10)", per: "1 Box", price: 5859 },
-//             { id: 171, name: "GREAT SHOW (10*10) (NEW)", per: "1 Box", price: 8505 },
-//             { id: 172, name: "WONDERLA (16 SHOT) (NEW)", per: "1 Box", price: 15782 }
-//         ]
-//     },
-
-//     {
-//         name: "SPARKLERS",
-//         products: [
-//             { id: 173, name: "7 Cm Electric Sparklers", per: "1 Box", price: 23 },
-//             { id: 174, name: "7 Cm Glittering Sparklers", per: "1 Box", price: 29 },
-//             { id: 175, name: "7 Cm Green Sparklers", per: "1 Box", price: 34 },
-//             { id: 176, name: "7 Cm Red Sparklers", per: "1 Box", price: 39 },
-//             { id: 177, name: "7 Cm Filty-Flity Sparklers", per: "1 Box", price: 40 },
-//             { id: 178, name: "10 Cm Electric Sparklers", per: "1 Box", price: 41 },
-//             { id: 179, name: "10 Cm Glittering Sparklers", per: "1 Box", price: 43 },
-//             { id: 180, name: "10 Cm Green Sparklers", per: "1 Box", price: 51 },
-//             { id: 181, name: "10 Cm Red Sparklers", per: "1 Box", price: 54 },
-//             { id: 182, name: "10 Cm Blue Sparklers", per: "1 Box", price: 57 },
-//             { id: 183, name: "12 Cm Electric Sparklers", per: "1 Box", price: 66 },
-//             { id: 184, name: "12 Cm Glittering Sparklers", per: "1 Box", price: 73 },
-//             { id: 185, name: "12 Cm Green Sparklers", per: "1 Box", price: 80 },
-//             { id: 186, name: "12 Cm Red Sparklers", per: "1 Box", price: 82 },
-//             { id: 187, name: "12 Cm Silver Drops Sparklers", per: "1 Box", price: 92 },
-//             { id: 188, name: "15 Cm Electric Sparklers", per: "1 Box", price: 113 },
-//             { id: 189, name: "15 Cm Glittering Sparklers", per: "1 Box", price: 125 },
-//             { id: 190, name: "15 Cm Green Sparklers", per: "1 Box", price: 142 },
-//             { id: 191, name: "15 Cm Red Sparklers", per: "1 Box", price: 150 },
-//             { id: 192, name: "30 Cm Electric Sparklers", per: "1 Box", price: 113 },
-//             { id: 193, name: "30 Cm Glittering Sparklers", per: "1 Box", price: 125 },
-//             { id: 194, name: "30 Cm Green Sparklers", per: "1 Box", price: 142 },
-//             { id: 195, name: "30 Cm Red Sparklers", per: "1 Box", price: 150 },
-//             { id: 196, name: "50 Cm Electric Sparklers", per: "1 Box", price: 392 },
-//             { id: 197, name: "50 Cm Glittering Sparklers", per: "1 Box", price: 437 },
-//             { id: 198, name: "70 Cm Electric Sparklers", per: "1 Box", price: 612 },
-//             { id: 199, name: "70 Cm Glittering Sparklers", per: "1 Box", price: 659 },
-//             { id: 200, name: "FIRE FLY (ROTATOR SPARKLERS)", per: "1 Box", price: 630 }
-//         ]
-//     },
-
-//     {
-//         name: "GIFT BOXES",
-//         products: [
-//             { id: 201, name: "JOLLY 16 ITEMS", price: 375, per: "1 Box", isFixedPrice: true },
-//             { id: 202, name: "FANTASY 21 ITEMS", price: 475, per: "1 Box", isFixedPrice: true },
-//             { id: 203, name: "ENJOY 25 ITEMS", price: 590, per: "1 Box", isFixedPrice: true },
-//             { id: 204, name: "BEAUTY 30 ITEMS", price: 690, per: "1 Box", isFixedPrice: true },
-//             { id: 205, name: "SHINY 35 ITEMS", price: 850, per: "1 Box", isFixedPrice: true },
-//             { id: 206, name: "JAMMAI 40 ITEMS", price: 990, per: "1 Box", isFixedPrice: true },
-//             { id: 207, name: "DISNEY 45 ITEMS", price: 1155, per: "1 Box", isFixedPrice: true },
-//             { id: 208, name: "LUXURY 50 ITEMS", price: 1350, per: "1 Box", isFixedPrice: true },
-//             { id: 209, name: "ROYAL GALAXY 60 ITEMS", price: 1560, per: "1 Box", isFixedPrice: true }
-//         ]
-//     },
-
-//     {
-//         name: "COLOUR MATCHES",
-//         products: [
-//             { id: 210, name: "MINI DELUXE", per: "1 Box", price: 91 },
-//             { id: 211, name: "KODI BABA", per: "1 Box", price: 119 },
-//             { id: 212, name: "MATRIX", per: "1 Box", price: 150 },
-//             { id: 213, name: "PLUMBS", per: "1 Box", price: 272 },
-//             { id: 214, name: "NOKIA", per: "1 Box", price: 511 },
-//             { id: 215, name: "TASARA", per: "1 Box", price: 533 },
-//             { id: 221, name: "ROLL CAP", per: "1 Box", price: 164 }
-//         ]
-//     }
-// ];
-
 const productGroups = [
     {
       name: "ONE SOUND CRACKERS (ஒற்றைச் சத்துப் பட்டாசுகள்)",
@@ -528,7 +142,7 @@ const productGroups = [
       products: [
          { id: 74, category: "ROCKETS & HELICOPTERS (ராக்கெட்டுகள் மற்றும் ஹெலிகாப்டர்கள்)", name: "HELICOPTER (ஹெலிகாப்டர்)", per: "BOX", price: 550, offerRate: 110 },
       { id: 75, category: "ROCKETS & HELICOPTERS (ராக்கெட்டுகள் மற்றும் ஹெலிகாப்டர்கள்)", name: "DRONE (ட்ரோன்)", per: "BOX", price: 1000, offerRate: 200 },
-      { id: 76, category: "ROCKETS & HELICOPTERS (ராக்கெட்டுகள் மற்றும் ஹெலிகாப்டர்கள்)", name: "LUNIK ROCKET (லூனிக் ராக்கெட்)", per: "BOX", price: 0, offerRate: 0 },
+      { id: 76, category: "ROCKETS & HELICOPTERS (ராக்கெட்டுகள் மற்றும் ஹெலிகாப்டர்கள்)", name: "LUNIK ROCKET (லூனிக் ராக்கெட்)", per: "BOX", price: 0, offerRate: 0, outOfStock: true },
       { id: 77, category: "ROCKETS & HELICOPTERS (ராக்கெட்டுகள் மற்றும் ஹெலிகாப்டர்கள்)", name: "WHISTLING ROCKET (விசில் ராக்கெட்)", per: "BOX", price: 750, offerRate: 150 }
       ]
     },
@@ -616,7 +230,7 @@ const productGroups = [
       name: "NIGHT FANCY MULTI SHOTS (நைட் ஃபேன்சி மல்டி ஷாட்ஸ்)",
       products: [
         { id: 118, category: "NIGHT FANCY MULTI SHOTS (நைட் ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "12 SHOTS RIDER (12 ஷாட்ஸ் ரைடர்)", per: "BOX", price: 725, offerRate: 145 },
-      { id: 119, category: "NIGHT FANCY MULTI SHOTS (நைட் ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "12 SHOTS MULTICOLOUR (12 ஷாட்ஸ் பல வண்ணங்கள்)", per: "BOX", price: 1100, offerRate: 220 },
+      { id: 119, category: "NIGHT FANCY MULTI SHOTS (நைட் ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "12 SHOTS MULTICOLOUR (12 ஷாட்ஸ் பல வண்ணங்கள்)", per: "BOX", price: 1100, offerRate: 220, outOfStock: true },
       { id: 120, category: "NIGHT FANCY MULTI SHOTS (நைட் ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "15 SHOTS MULTICOLOUR (15 ஷாட்ஸ் பல வண்ணங்கள்)", per: "BOX", price: 1500, offerRate: 300 },
       { id: 121, category: "NIGHT FANCY MULTI SHOTS (நைட் ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "25 SHOTS RIDER (25 ஷாட்ஸ் ரைடர்)", per: "BOX", price: 1100, offerRate: 220 },
       { id: 122, category: "NIGHT FANCY MULTI SHOTS (நைட் ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "30 SHOTS MULTICOLOUR A GRADE (30 ஷாட்ஸ் பல வண்ணங்கள் A தரம்)", per: "BOX", price: 2750, offerRate: 550 },
@@ -632,11 +246,11 @@ const productGroups = [
       name: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)",
       products: [
          { id: 129, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "6 SHOTS LOVE DOVE (6 ஷாட்ஸ் லவ் டவ்)", per: "BOX", price: 1000, offerRate: 200 },
-      { id: 130, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "10 SHOTS WITH SKY CHAKKAR (10 ஷாட்ஸ் வானச் சக்கரத்துடன்)", per: "BOX", price: 0, offerRate: 0 },
-      { id: 131, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "30 SHOTS PEACOCK DANCE (30 ஷாட்ஸ் மயில் நடனம்)", per: "BOX", price: 0, offerRate: 0 },
+      { id: 130, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "10 SHOTS WITH SKY CHAKKAR (10 ஷாட்ஸ் வானச் சக்கரத்துடன்)", per: "BOX", price: 0, offerRate: 0, outOfStock: true },
+      { id: 131, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "30 SHOTS PEACOCK DANCE (30 ஷாட்ஸ் மயில் நடனம்)", per: "BOX", price: 0, offerRate: 0, outOfStock: true },
       { id: 132, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "5 X 10 (50 SHOTS) (5 x 10, மொத்தம் 50 ஷாட்ஸ்)", per: "BOX", price: 12500, offerRate: 2500 },
       { id: 133, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "10 X 10 (100 SHOTS) (10 x 10, மொத்தம் 100 ஷாட்ஸ்)", per: "BOX", price: 25000, offerRate: 5000 },
-      { id: 134, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "GUN SHOOTER (கன் ஷூட்டர்)", per: "BOX", price: 0, offerRate: 0 }
+      { id: 134, category: "SPECIAL FANCY MULTISHOTS (சிறப்பு ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "GUN SHOOTER (கன் ஷூட்டர்)", per: "BOX", price: 0, offerRate: 0, outOfStock: true }
       ]
     },
     {
@@ -658,7 +272,7 @@ const productGroups = [
       products: [
         { id: 139, category: "MUSICAL MULTI SHOTS (இசை மல்டி ஷாட்ஸ்)", name: "12 SINGING BIRD MUSICAL SHOTS (12 பாடும் பறவை இசை ஷாட்ஸ்)", per: "BOX", price: 2750, offerRate: 550 },
       { id: 140, category: "MUSICAL MULTI SHOTS (இசை மல்டி ஷாட்ஸ்)", name: "25 SINGING BIRD MUSICAL SHOTS (25 பாடும் பறவை இசை ஷாட்ஸ்)", per: "BOX", price: 5500, offerRate: 1100 },
-      { id: 141, category: "MUSICAL MULTI SHOTS (இசை மல்டி ஷாட்ஸ்)", name: "WHISTLE READY (விசில் ரெடி)", per: "BOX", price: 0, offerRate: 0 }
+      { id: 141, category: "MUSICAL MULTI SHOTS (இசை மல்டி ஷாட்ஸ்)", name: "WHISTLE READY (விசில் ரெடி)", per: "BOX", price: 0, offerRate: 0, outOfStock: true }
       ]
     },
     {
@@ -707,6 +321,57 @@ const productGroups = [
       ]
     },
   ];
+
+  
+const updatedPrices = {
+    1:[79,16], 2:[53,11], 3:[116,23], 4:[173,35], 5:[189,38],
+    6:[231,46], 7:[263,53], 8:[68,14], 9:[74,15], 10:[84,17],
+    11:[100,20], 12:[121,24], 13:[137,27], 14:[143,29], 15:[153,31],
+    16:[252,50], 17:[263,53], 18:[294,59], 19:[315,63], 20:[252,50],
+    21:[263,53], 22:[294,59], 23:[315,63], 24:[1155,231], 25:[1313,263],
+    26:[446,89], 27:[525,105], 28:[656,131], 29:[1313,263], 30:[210,42],
+    31:[231,46], 32:[263,53], 33:[525,105], 34:[1050,210], 35:[735,147],
+    36:[473,95], 37:[368,74], 38:[578,116], 39:[473,95], 40:[893,179],
+    41:[683,137], 42:[1323,265], 43:[1155,231], 44:[1444,289], 45:[1365,273],
+    46:[998,200], 47:[284,57], 48:[483,97], 49:[756,151], 50:[840,168],
+    51:[788,158], 52:[1838,368], 53:[893,179], 54:[158,32], 55:[420,84],
+    56:[525,105], 57:[578,116], 58:[525,105], 59:[210,42], 60:[158,32],
+    61:[158,32], 62:[158,32], 63:[578,116], 64:[1050,210], 65:[1313,263],
+    66:[2888,578], 67:[1418,284], 68:[1418,284], 69:[788,158], 70:[1365,273],
+    71:[1575,315], 72:[840,168], 73:[893,179], 74:[578,116], 75:[1050,210],
+    76:[630,126], 77:[788,158], 78:[919,184], 79:[1181,236], 80:[656,131],
+    81:[656,131], 82:[656,131], 83:[656,131], 84:[761,152], 85:[1575,315],
+    86:[1286,257], 87:[1286,257], 88:[1286,257], 89:[1286,257], 90:[446,89],
+    91:[1050,210], 92:[971,194], 93:[971,194], 94:[3465,693], 95:[2100,420],
+    96:[630,126], 97:[840,168], 98:[1155,231], 99:[1575,315], 100:[1575,315],
+    101:[1575,315], 102:[1575,315], 103:[1155,231], 104:[1759,352],
+    105:[236,47], 106:[735,147], 107:[578,116], 108:[1733,347],
+    109:[1313,263], 110:[1575,315], 111:[1680,336], 112:[1418,284],
+    113:[1838,368], 114:[2730,546], 115:[5250,1050], 116:[998,200],
+    117:[2835,567], 118:[761,152], 119:[1155,231], 120:[1575,315],
+    121:[1155,231], 122:[2888,578], 123:[2363,473], 124:[5775,1155],
+    125:[4725,945], 126:[11550,2310], 127:[9450,1890], 128:[23100,4620],
+    129:[1050,210], 130:[1470,294], 131:[2363,473], 132:[13125,2625],
+    133:[26250,5250], 134:[2888,578], 135:[525,105], 136:[630,126],
+    137:[184,37], 138:[1365,273], 139:[2888,578], 140:[5775,1155],
+    141:[0,0], 142:[315,63], 143:[604,121], 144:[1733,347],
+    145:[1181,236], 146:[8663,1733], 147:[5828,1166], 148:[2888,578],
+    149:[15750,3150], 150:[877,175], 151:[877,175], 152:[877,175],
+    153:[1050,210], 154:[1050,210], 155:[1050,210],
+    156:[0,700], 157:[0,950], 158:[0,1600], 159:[0,4000], 160:[0,7000], 161:[0,12000]
+  };
+  
+  productGroups.forEach(group => {
+    group.products.forEach(product => {
+      const priceData = updatedPrices[product.id];
+  
+      if (priceData) {
+        product.price = priceData[0];
+        product.offerRate = priceData[1];
+      }
+    });
+  });
+  
 const CUSTOMER_DISCOUNT_RATE = 0.5;
 const SHOWCASE_DISCOUNT_RATE = 0.8;
 const MIN_ORDER_OFFER_AMOUNT = 3000;
@@ -960,7 +625,7 @@ function createRowMarkup(product) {
         ? `${product.name} <span class="price-tag">Fixed Price</span>`
         : product.name;
 
-        if(pricing.customerOfferPrice == 0)
+        if(product.outOfStock)
             {
                 return `
                 <tr id="product-row-${product.id}">
@@ -968,7 +633,7 @@ function createRowMarkup(product) {
                     <td class="product-image-cell">
     ${getProductImageMarkup(product)}
 </td>
-                    <td data-label="Product Name"  class="money amount-original" >${productName} (${product.per}) No Stock</td>
+                    <td data-label="Product Name" CLASS="money" ><span  class="money amount-original">${productName} (${product.per}) </span> <BR> No Stock</td>
                     ${buildPricePairCell(pricing.showcasedOriginalPrice, pricing.customerOfferPrice, product.isFixedPrice)}
                     <td data-label="Quantity" style="pointer-events: none; opacity: 0.5; background-color: #f2f2f2; color: #888;">${buildQuantityStepper(product, quantity)}</td>
                     <td class="money amount-offer" id="offer-total-${product.id}" data-label="Total Offer Amount">0.00</td>
@@ -1792,6 +1457,7 @@ function buildDownloadDocument() {
             text-decoration: line-through;
         }
 
+        
         .amount-offer {
             color: #166534;
             font-weight: 700;
