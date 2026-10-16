@@ -2034,20 +2034,30 @@ window.setInterval(updateDeadlineCountdowns, 1000);
 
 // Floating WhatsApp action: prepare the selected-products PDF through the existing
 // invoice generator, then use native file sharing when supported or WhatsApp text fallback.
+
 const floatingWhatsAppButton = document.getElementById("floatingWhatsAppButton");
+
 if (floatingWhatsAppButton) {
     floatingWhatsAppButton.addEventListener("click", () => {
-        if (!getSelectedProducts().length) {
+        const selected = getSelectedProducts();
+
+        if (!selected.length) {
             showDownloadToast("Select products before preparing your WhatsApp order.");
-            selectionScreen.scrollIntoView({ behavior: "smooth", block: "start" });
+            selectionScreen.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
             return;
         }
+
         if (!isMinimumOrderMet()) {
             showReviewScreen();
-            showDownloadToast("Add items to meet the minimum order amount 3000.");
+            showDownloadToast("Add items to meet the minimum order amount ₹3,000.");
             return;
         }
+
         const validation = validateCustomerDetails();
+
         if (!validation.isValid) {
             renderReviewTable();
             showScreen(reviewScreen, "forward");
@@ -2055,15 +2065,59 @@ if (floatingWhatsAppButton) {
             showDownloadToast("Enter your customer details before sharing.");
             return;
         }
-        showInvoiceScreen();
-        window.setTimeout(() => downloadInvoice(), 0);
+
+        const customer = getCustomerDetails();
+
+        const lines = [
+            "*SEYON CRACKERS & TRADERS*",
+            "*NEW ORDER REQUEST*",
+            "Sivakasi | +91 70109 42234",
+            "--------------------------------",
+            "",
+            "*ORDER DETAILS*",
+            ...selected.map(({ product, quantity }, index) => {
+                const price = calculatePrices(product, quantity);
+
+                return [
+                    `${index + 1}. ${product.name}`,
+                    `   Product Code: ${product.id}`,
+                    `   Price: ${formatAmount(price.rowOfferTotal / quantity)} per ${product.per || "Unit"}`,
+                    `   Quantity: ${quantity}`,
+                    `   Amount: ${formatAmount(price.rowOfferTotal)}`
+                ].join("\n");
+            }),
+            "",
+            "--------------------------------",
+            `Total products: ${selected.length}`,
+            `Total quantity: ${selected.reduce((sum, item) => sum + item.quantity, 0)}`,
+            `*TOTAL OFFER AMOUNT: ${formatAmount(getCurrentGrandOfferTotal())}*`,
+            "",
+            "*CUSTOMER DETAILS*",
+            `Name: ${customer.name.trim()}`,
+            `Mobile: ${customer.phone.replace(/\D/g, "")}`,
+            `Delivery Address: ${customer.address.trim()}`,
+            "",
+            "Please confirm product availability.",
+            "Thank you for ordering with Seyon Crackers!"
+        ];
+
+        const message = encodeURIComponent(lines.join("\n"));
+        const whatsappNumber = "917010942234";
+
+        // Open WhatsApp with the order text; no PDF is generated or downloaded.
+        const whatsappUrl =
+            `https://wa.me/${whatsappNumber}?text=${message}`;
+
+        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     });
 }
+
 
 // Modern catalog controls and complete WhatsApp order sharing.
 if (sortFilterEl) {
     sortFilterEl.addEventListener("change", renderAccordion);
 }
+
 
 const whatsappOrderButton = document.getElementById("whatsappOrderButton");
 
@@ -2078,7 +2132,6 @@ if (whatsappOrderButton) {
 
         const customer = getCustomerDetails();
 
-        // Validate required customer details
         if (!customer.name?.trim()) {
             alert("Please enter your name.");
             customerNameEl.focus();
@@ -2091,7 +2144,6 @@ if (whatsappOrderButton) {
             return;
         }
 
-        // Validate 10-digit Indian mobile number
         const phone = customer.phone.replace(/\D/g, "");
 
         if (!/^[6-9]\d{9}$/.test(phone)) {
@@ -2106,14 +2158,13 @@ if (whatsappOrderButton) {
             return;
         }
 
-        // Open WhatsApp only after all validations pass
         const lines = [
             "*Seyon Crackers & Traders — Order Request*",
             "Sivakasi | +91 70109 42234",
             "",
             ...selected.map(({ product, quantity }, index) => {
                 const price = calculatePrices(product, quantity);
-                return `${index + 1}.(${product.id}) ${product.name} (${product.per || "Unit"}) x ${quantity} = ${formatAmount(price.rowOfferTotal)}`;
+                return `${index + 1}. (${product.id}) ${product.name} (${product.per || "Unit"}) x ${quantity} = ${formatAmount(price.rowOfferTotal)}`;
             }),
             "",
             `Items: ${selected.length}`,
@@ -2122,13 +2173,22 @@ if (whatsappOrderButton) {
             `Mobile: ${phone}`,
             `Address: ${customer.address.trim()}`,
             "",
-            "Please confirm availability and delivery charges. Thank you!"
+            "Please confirm availability. Thank you!"
         ];
 
-        const whatsappUrl =
-            `https://wa.me/917010942234?text=${encodeURIComponent(lines.join("\n"))}`;
+        const message = encodeURIComponent(lines.join("\n"));
+        const whatsappNumber = "917010942234";
 
-        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+        // Open the WhatsApp app on mobile, or WhatsApp Web on desktop.
+        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+        const whatsappUrl = isMobile
+            ? `whatsapp://send?phone=${whatsappNumber}&text=${message}`
+            : `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${message}`;
+
+        // Run directly from the button click to help mobile app launching.
+        window.location.href = whatsappUrl;
     });
 }
+
 
