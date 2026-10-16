@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seyon Crackers & Traders</title>
+    <title>Seyon Crackers | Sivakasi Festival Store</title>
+    <meta name="theme-color" content="#671b25">
+    <meta name="description" content="Explore Sivakasi crackers from Seyon Crackers & Traders. Browse offers and prepare your order online.">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,18 +15,18 @@
         <section class="card">
             <header class="header">
                 <h1 style="text-align: center;">Seyon Crackers & Traders</h1>
-                <p style="text-align: center;"> +91 70109 42234 | Sivakasi, India</p>
-                <a href="tel:+917010942234" class="mobile-call-btn"
-   aria-label="Call Seyon Crackers">
-  📞
-</a>
+                <p class="header-contact"><a href="tel:+917010942234" aria-label="Call Seyon Crackers">☎ +91 70109 42234</a><span> · </span><span>Sivakasi, India</span></p>
             </header>
 
+            <nav class="quick-nav" aria-label="Quick navigation"><a href="#selectionScreen">Shop crackers</a><a href="#productAccordion">Categories</a><a href="tel:+917010942234">☎ Call us</a></nav>
             <section id="selectionScreen" class="screen" aria-label="Product selection screen">
                 <section class="promo-banner" aria-label="Featured crackers">
                     <div class="promo-copy">
                         <span class="promo-kicker">Seyon Crackers & Traders</span>
-                        <h2>Catchy crackers packs for every celebration</h2>
+                        <h2>Make this Deepavali<br><span>brighter than ever.</span></h2>
+                        <p class="hero-description">Discover festive favourites from Sivakasi with exciting prices for every celebration.</p>
+                        <a class="hero-cta" href="#productAccordion">Explore crackers <span aria-hidden="true">→</span></a>
+                        <div class="hero-trust"><span>✦ Carefully listed products</span><span>✦ Easy order review</span></div>
                     </div>
                     <div class="promo-gallery" aria-hidden="true">
                         <figure class="promo-card promo-card-rose">
@@ -41,6 +43,51 @@
                         </figure>
                     </div>
                 </section>
+
+                <section class="delivery-deadlines" aria-labelledby="deliveryDeadlineTitle">
+                    <div class="deadline-heading">
+                        <span class="deadline-icon" aria-hidden="true">🗓️</span>
+                        <div>
+                            <p class="deadline-eyebrow">Deepavali 2026 · Order planning</p>
+                            <h2 id="deliveryDeadlineTitle">Regional Order Deadlines</h2>
+                            <p>Order acceptance closes at <strong>11:59:59 PM India Standard Time (IST)</strong> on each date.</p>
+                        </div>
+                    </div>
+                    <div class="deadline-grid">
+                        <article class="deadline-card">
+                            <span class="deadline-region-icon" aria-hidden="true">🎆</span>
+                            <h3>South &amp; Andhra Region</h3>
+                            <p class="deadline-locations">Telangana, Andhra Pradesh, Kerala &amp; Tamil Nadu</p>
+                            <p class="deadline-date">31 October 2026 · 11:59 PM IST</p>
+                            <div class="countdown" data-deadline="2026-10-31T23:59:59+05:30">
+                                <span><strong data-unit="days">--</strong><small>Days</small></span><span><strong data-unit="hours">--</strong><small>Hours</small></span><span><strong data-unit="minutes">--</strong><small>Minutes</small></span><span><strong data-unit="seconds">--</strong><small>Seconds</small></span>
+                            </div>
+                            <p class="deadline-status" aria-live="polite">Calculating time remaining…</p>
+                        </article>
+                        <article class="deadline-card">
+                            <span class="deadline-region-icon" aria-hidden="true">🚚</span>
+                            <h3>Karnataka &amp; Puducherry</h3>
+                            <p class="deadline-locations">Karnataka and Puducherry</p>
+                            <p class="deadline-date">4 November 2026 · 11:59 PM IST</p>
+                            <div class="countdown" data-deadline="2026-11-04T23:59:59+05:30">
+                                <span><strong data-unit="days">--</strong><small>Days</small></span><span><strong data-unit="hours">--</strong><small>Hours</small></span><span><strong data-unit="minutes">--</strong><small>Minutes</small></span><span><strong data-unit="seconds">--</strong><small>Seconds</small></span>
+                            </div>
+                            <p class="deadline-status" aria-live="polite">Calculating time remaining…</p>
+                        </article>
+                        <article class="deadline-card">
+                            <span class="deadline-region-icon" aria-hidden="true">📍</span>
+                            <h3>Chennai &amp; Nearby Districts</h3>
+                            <p class="deadline-locations">Chennai, Thiruvallur, Kanchipuram &amp; Chengalpattu</p>
+                            <p class="deadline-date">6 November 2026 · 11:59 PM IST</p>
+                            <div class="countdown" data-deadline="2026-11-06T23:59:59+05:30">
+                                <span><strong data-unit="days">--</strong><small>Days</small></span><span><strong data-unit="hours">--</strong><small>Hours</small></span><span><strong data-unit="minutes">--</strong><small>Minutes</small></span><span><strong data-unit="seconds">--</strong><small>Seconds</small></span>
+                            </div>
+                            <p class="deadline-status" aria-live="polite">Calculating time remaining…</p>
+                        </article>
+                    </div>
+                </section>
+
+              
 
                 <!-- <div class="minimum-order-banner" role="note" aria-live="polite">
                     <strong>Minimum Order Alert</strong>
@@ -79,6 +126,7 @@
                         <span>Search Products</span>
                         <input id="productSearch" type="search" placeholder="Search by name or code">
                     </label>
+                    <label class="catalog-sort-field"><span>Sort By</span><select id="sortFilter"><option value="default">Recommended</option><option value="name-asc">Name: A–Z</option><option value="price-asc">Offer price: Low to high</option><option value="price-desc">Offer price: High to low</option></select></label>
                     <label class="catalog-filter-field">
                         <span>Filter Group</span>
                         <select id="groupFilter">
@@ -96,7 +144,7 @@
 
                 <div class="actions">
                     <button type="button" class="btn btn-secondary reset-session-button web-reset-button">Clear</button>
-                    <button id="reviewButton" type="button" class="btn btn-primary">Review Selected Products</button>
+                    <button id="reviewButton" type="button" class="btn btn-primary">Review Selected Products <span aria-hidden="true">→</span></button>
                 </div>
             </section>
 
@@ -172,8 +220,9 @@
 
                 <div class="actions">
                     <button type="button" class="btn btn-secondary reset-session-button web-reset-button">Clear</button>
-                    <button id="backButton" type="button" class="btn">Back to Selection</button>
+                    <button id="backButton" type="button" class="btn">Back</button>
                     <button id="invoiceButton" type="button" class="btn btn-primary">Generate Invoice</button>
+                    <button id="whatsappOrderButton" type="button" class="btn btn-whatsapp">Share Order on WhatsApp</button>
                 </div>
             </section>
 
@@ -268,32 +317,38 @@
                 </div>
             </section>
 
-            <aside id="mobileMiniCart" class="mobile-mini-cart" aria-label="Mobile cart summary">
-                <div class="mini-cart-copy">
-                    <strong id="miniCartItemCount">0 items</strong>
-                    <span id="miniCartQuantity">Qty 0</span>
-                </div>
-                <div class="mini-cart-stats" aria-hidden="true">
-                    <div class="mini-cart-stat">
-                        <span class="mini-cart-stat-label">Discount</span>
-                        <strong id="miniCartDiscount">0.00</strong>
-                    </div>
-                    <div class="mini-cart-stat">
-                        <span class="mini-cart-stat-label">Grand Total</span>
-                        <strong id="miniCartGrandTotal">0.00</strong>
-                    </div>
-                    <div class="mini-cart-stat mini-cart-stat-accent">
-                        <span class="mini-cart-stat-label">Offer Total</span>
-                        <strong id="miniCartOfferTotal">0.00</strong>
-                    </div>
-                </div>
-                <div class="mini-cart-actions">
-                    <button id="miniCartResetButton" type="button" class="btn btn-secondary">Clear</button>
-                    <button id="miniCartReviewButton" type="button" class="btn btn-primary">Review</button>
-                </div>
-            </aside>
+
         </section>
+        <footer class="site-footer">© 2026 Seyon Crackers. All rights reserved.</footer>
     </main>
+
+        <aside id="mobileMiniCart" class="mobile-mini-cart" aria-label="Mobile cart summary">
+            <div class="mini-cart-copy">
+                <strong id="miniCartItemCount">0 items</strong>
+                <span id="miniCartQuantity">Qty 0</span>
+            </div>
+            <div class="mini-cart-stats">
+                <div class="mini-cart-stat">
+                    <span class="mini-cart-stat-label">Discount</span>
+                    <strong id="miniCartDiscount">0.00</strong>
+                </div>
+                <div class="mini-cart-stat">
+                    <span class="mini-cart-stat-label">Grand Total</span>
+                    <strong id="miniCartGrandTotal">0.00</strong>
+                </div>
+                <div class="mini-cart-stat mini-cart-stat-accent">
+                    <span class="mini-cart-stat-label">Offer Total</span>
+                    <strong id="miniCartOfferTotal">0.00</strong>
+                </div>
+            </div>
+            <div class="mini-cart-actions">
+                <button id="miniCartResetButton" type="button" class="btn btn-secondary">Clear</button>
+                <button id="miniCartReviewButton" type="button" class="btn btn-primary">Review</button>
+                <button id="floatingWhatsAppButton" class="floating-whatsapp" type="button" aria-label="Generate selected-items PDF and prepare WhatsApp order">
+                    <span aria-hidden="true">☏</span><span class="floating-whatsapp-label">WhatsApp Order</span>
+                </button>
+            </div>
+        </aside>
 
     <output id="downloadToast" class="toast hidden" aria-live="polite">Invoice downloaded</output>
 
