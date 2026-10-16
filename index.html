@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seyon Crackers & Traders</title>
+    <title>Seyon Crackers | Sivakasi Festival Store</title>
+    <meta name="theme-color" content="#671b25">
+    <meta name="description" content="Explore Sivakasi crackers from Seyon Crackers & Traders. Browse offers and prepare your order online.">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,18 +15,18 @@
         <section class="card">
             <header class="header">
                 <h1 style="text-align: center;">Seyon Crackers & Traders</h1>
-                <p style="text-align: center;"> +91 70109 42234 | Sivakasi, India</p>
-                <a href="tel:+917010942234" class="mobile-call-btn"
-   aria-label="Call Seyon Crackers">
-  📞
-</a>
+                <p class="header-contact"><a href="tel:+917010942234" aria-label="Call Seyon Crackers">☎ +91 70109 42234</a><span> · </span><span>Sivakasi, India</span></p>
             </header>
 
+            <nav class="quick-nav" aria-label="Quick navigation"><a href="#selectionScreen">Shop crackers</a><a href="#productAccordion">Categories</a><a href="tel:+917010942234">☎ Call us</a></nav>
             <section id="selectionScreen" class="screen" aria-label="Product selection screen">
                 <section class="promo-banner" aria-label="Featured crackers">
                     <div class="promo-copy">
                         <span class="promo-kicker">Seyon Crackers & Traders</span>
-                        <h2>Catchy crackers packs for every celebration</h2>
+                        <h2>Make this Deepavali<br><span>brighter than ever.</span></h2>
+                        <p class="hero-description">Discover festive favourites from Sivakasi with exciting prices for every celebration.</p>
+                        <a class="hero-cta" href="#productAccordion">Explore crackers <span aria-hidden="true">→</span></a>
+                        <div class="hero-trust"><span>✦ Carefully listed products</span><span>✦ Easy order review</span></div>
                     </div>
                     <div class="promo-gallery" aria-hidden="true">
                         <figure class="promo-card promo-card-rose">
@@ -79,6 +81,7 @@
                         <span>Search Products</span>
                         <input id="productSearch" type="search" placeholder="Search by name or code">
                     </label>
+                    <label class="catalog-sort-field"><span>Sort By</span><select id="sortFilter"><option value="default">Recommended</option><option value="name-asc">Name: A–Z</option><option value="price-asc">Offer price: Low to high</option><option value="price-desc">Offer price: High to low</option></select></label>
                     <label class="catalog-filter-field">
                         <span>Filter Group</span>
                         <select id="groupFilter">
@@ -96,7 +99,7 @@
 
                 <div class="actions">
                     <button type="button" class="btn btn-secondary reset-session-button web-reset-button">Clear</button>
-                    <button id="reviewButton" type="button" class="btn btn-primary">Review Selected Products</button>
+                    <button id="reviewButton" type="button" class="btn btn-primary">Review Selected Products <span aria-hidden="true">→</span></button>
                 </div>
             </section>
 
@@ -174,6 +177,7 @@
                     <button type="button" class="btn btn-secondary reset-session-button web-reset-button">Clear</button>
                     <button id="backButton" type="button" class="btn">Back to Selection</button>
                     <button id="invoiceButton" type="button" class="btn btn-primary">Generate Invoice</button>
+                    <button id="whatsappOrderButton" type="button" class="btn btn-whatsapp">Share Order on WhatsApp</button>
                 </div>
             </section>
 

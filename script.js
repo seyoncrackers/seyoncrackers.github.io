@@ -401,6 +401,7 @@ const orderTargetCardEl = document.getElementById("orderTargetCard");
 const orderTargetAmountEl = document.getElementById("orderTargetAmount");
 const productSearchEl = document.getElementById("productSearch");
 const groupFilterEl = document.getElementById("groupFilter");
+const sortFilterEl = document.getElementById("sortFilter");
 const catalogEmptyStateEl = document.getElementById("catalogEmptyState");
 const mobileMiniCartEl = document.getElementById("mobileMiniCart");
 const miniCartItemCountEl = document.getElementById("miniCartItemCount");
@@ -448,8 +449,17 @@ const groupDisplayMeta = {
 const QUANTITY_STORAGE_KEY = "novamart.quantities";
 const CUSTOMER_STORAGE_KEY = "novamart.customer.details";
 const APP_VERSION = "1.1.0";
-const JSPDF_LIBRARY_URL = "jspdf.umd.min.js";
-const JSPDF_AUTOTABLE_LIBRARY_URL = "jspdf.plugin.autotable.min.js";
+// PDF libraries are loaded from multiple CDNs so one unavailable host will not break PDF download.
+const JSPDF_LIBRARY_URLS = [
+    "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js",
+    "https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js",
+    "https://unpkg.com/jspdf@2.5.2/dist/jspdf.umd.min.js"
+];
+const JSPDF_AUTOTABLE_LIBRARY_URLS = [
+    "https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.4/jspdf.plugin.autotable.min.js",
+    "https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.4/dist/jspdf.plugin.autotable.min.js",
+    "https://unpkg.com/jspdf-autotable@3.8.4/dist/jspdf.plugin.autotable.min.js"
+];
 
 const products = productGroups.flatMap((group) => group.products);
 const productGroupById = new Map();
@@ -867,13 +877,51 @@ function resetSession() {
     showDownloadToast("Selection reset");
 }
 
+function buildProductCardMarkup(product) {
+    const quantity = quantityState.get(product.id) || 0;
+    const pricing = calculatePrices(product, quantity);
+    const unavailable = Boolean(product.outOfStock);
+    const fixed = Boolean(product.isFixedPrice);
+    return `
+      <article class="product-card ${quantity > 0 ? "row-selected" : ""} ${unavailable ? "product-unavailable" : ""}" id="product-row-${product.id}">
+        <div class="product-card-media">
+          <span class="product-code">#${product.id}</span>
+          ${!fixed && !unavailable ? '<span class="product-offer-badge">Festive offer</span>' : ''}
+          ${getProductImageMarkup(product)}
+          <span class="product-image-caption">${unavailable ? 'Currently unavailable' : (fixed ? 'Fixed price' : 'Special price')}</span>
+        </div>
+        <div class="product-card-content">
+          <div class="product-card-heading">
+            <h3>${product.name}</h3>
+            <span class="product-unit">${product.per || 'Pack'}</span>
+          </div>
+          <div class="product-price-block">
+            ${fixed ? `<span class="product-current-price">${formatAmount(pricing.showcasedOriginalPrice)}</span><span class="product-fixed-note">Fixed price</span>` : `<span class="product-old-price">${formatAmount(pricing.showcasedOriginalPrice)}</span><span class="product-current-price">${formatAmount(pricing.customerOfferPrice)}</span><span class="product-saving">Save ${formatAmount(pricing.showcasedOriginalPrice - pricing.customerOfferPrice)}</span>`}
+          </div>
+          <div class="product-card-footer">
+            <div class="product-quantity-area">
+              <span class="quantity-label">Quantity</span>
+              ${unavailable ? '<span class="out-of-stock-label">Out of stock</span>' : buildQuantityStepper(product, quantity)}
+            </div>
+            <div class="product-line-total"><span>Item total</span><strong id="offer-total-${product.id}">${formatAmount(pricing.rowOfferTotal)}</strong></div>
+          </div>
+        </div>
+      </article>`;
+}
+
 function renderAccordion() {
     accordion.innerHTML = "";
 
     const filteredGroups = productGroups
         .map((group) => ({
             ...group,
-            products: group.products.filter((product) => matchesCatalogFilters(product, group.name))
+            products: group.products.filter((product) => matchesCatalogFilters(product, group.name)).sort((a, b) => {
+                const mode = sortFilterEl?.value || "default";
+                if (mode === "name-asc") return a.name.localeCompare(b.name);
+                if (mode === "price-asc") return a.offerRate - b.offerRate;
+                if (mode === "price-desc") return b.offerRate - a.offerRate;
+                return a.id - b.id;
+            })
         }))
         .filter((group) => group.products.length > 0);
 
@@ -887,37 +935,19 @@ function renderAccordion() {
     filteredGroups.forEach((group, index) => {
         const isOpen = true;
         const panelId = `group-panel-${index}`;
-        const groupMeta = groupDisplayMeta[group.name] || { icon: group.name.charAt(0), theme: "default" };
-
+        const groupMeta = groupDisplayMeta[group.name] || { icon: "🎇", theme: "default" };
         const section = document.createElement("section");
         section.className = `accordion-item group-theme-${groupMeta.theme}`;
-
         section.innerHTML = `
             <button class="accordion-trigger" type="button" aria-expanded="${isOpen}" aria-controls="${panelId}">
                 <span class="accordion-title"><span class="accordion-icon">${groupMeta.icon}</span><span>${group.name}</span></span>
-                <span class="accordion-meta">${group.products.length} items</span>
+                <span class="accordion-meta">${group.products.length} products <span aria-hidden="true">⌄</span></span>
             </button>
             <div class="accordion-panel ${isOpen ? "open" : ""}" id="${panelId}">
-                <div class="table-wrap">
-                    <table aria-label="${group.name} product list with pricing and totals">
-                        <thead>
-                            <tr>
-                                <th>SI.No</th>
-                                    <th>Image</th>
-                                <th>Product Name</th>
-                                <th>Price (Original / Offer)</th>
-                                <th>Quantity</th>
-                                <th>Total Offer Amount</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            ${group.products.map((product) => createRowMarkup(product)).join("")}
-                        </tbody>
-                    </table>
+                <div class="product-card-grid" aria-label="${group.name} products">
+                    ${group.products.map((product) => buildProductCardMarkup(product)).join("")}
                 </div>
-            </div>
-        `;
-
+            </div>`;
         accordion.appendChild(section);
     });
 }
@@ -1130,39 +1160,67 @@ function sanitizeFileName(value) {
 
 function loadExternalScript(url) {
     return new Promise((resolve, reject) => {
-        const script = document.createElement("script");
+        // Avoid adding duplicate script elements when a download is clicked repeatedly.
+        const existing = Array.from(document.scripts).find((item) => item.src === url);
+        if (existing?.dataset.loaded === "true") {
+            resolve();
+            return;
+        }
+
+        const script = existing || document.createElement("script");
         script.src = url;
         script.async = true;
-        script.onload = () => resolve();
-        script.onerror = () => reject(new Error(`Failed to load script: ${url}`));
-        document.head.appendChild(script);
+        script.onload = () => {
+            script.dataset.loaded = "true";
+            resolve();
+        };
+        script.onerror = () => {
+            script.remove();
+            reject(new Error(`Failed to load script: ${url}`));
+        };
+        if (!existing) document.head.appendChild(script);
     });
+}
+
+async function loadFirstAvailableScript(urls, isReady, libraryName) {
+    if (isReady()) return;
+    let lastError;
+    for (const url of urls) {
+        try {
+            await loadExternalScript(url);
+            if (isReady()) return;
+            lastError = new Error(`${libraryName} loaded but did not initialize: ${url}`);
+        } catch (error) {
+            lastError = error;
+            console.warn(`${libraryName} CDN failed; trying another source.`, error);
+        }
+    }
+    throw lastError || new Error(`Unable to load ${libraryName}. Check your internet connection or CDN access.`);
 }
 
 function ensureJsPdfLoaded() {
     if (window.jspdf?.jsPDF?.API?.autoTable) {
         return Promise.resolve(window.jspdf.jsPDF);
     }
-
-    if (jsPdfLoaderPromise) {
-        return jsPdfLoaderPromise;
-    }
+    if (jsPdfLoaderPromise) return jsPdfLoaderPromise;
 
     jsPdfLoaderPromise = (async () => {
-        if (!window.jspdf?.jsPDF) {
-            await loadExternalScript(JSPDF_LIBRARY_URL);
-        }
-
-        if (!window.jspdf?.jsPDF?.API?.autoTable) {
-            await loadExternalScript(JSPDF_AUTOTABLE_LIBRARY_URL);
-        }
-
-        if (!window.jspdf?.jsPDF?.API?.autoTable) {
-            throw new Error("jsPDF autoTable did not initialize");
-        }
-
+        await loadFirstAvailableScript(
+            JSPDF_LIBRARY_URLS,
+            () => Boolean(window.jspdf?.jsPDF),
+            "jsPDF"
+        );
+        await loadFirstAvailableScript(
+            JSPDF_AUTOTABLE_LIBRARY_URLS,
+            () => Boolean(window.jspdf?.jsPDF?.API?.autoTable),
+            "jsPDF AutoTable plugin"
+        );
         return window.jspdf.jsPDF;
-    })();
+    })().catch((error) => {
+        // Permit a later retry if the network/CDN was temporarily unavailable.
+        jsPdfLoaderPromise = null;
+        throw error;
+    });
 
     return jsPdfLoaderPromise;
 }
@@ -1218,37 +1276,38 @@ function truncatePdfCellText(value, maxCharsPerLine = 34, maxLines = 2) {
 
 
 async function registerTamilFont(doc) {
-    const response = await fetch("NotoSansTamil-Regular.ttf");
+    // Keep this font file in the repository root to render Tamil product names correctly.
+    try {
+        const response = await fetch("NotoSansTamil-Regular.ttf");
+        if (!response.ok) return false;
 
-    if (!response.ok) {
-        throw new Error("Could not load the Tamil font");
+        const bytes = new Uint8Array(await response.arrayBuffer());
+        let binary = "";
+        const chunkSize = 0x8000;
+        for (let offset = 0; offset < bytes.length; offset += chunkSize) {
+            binary += String.fromCharCode(...bytes.subarray(offset, offset + chunkSize));
+        }
+
+        const fontFile = "NotoSansTamil-Regular.ttf";
+        doc.addFileToVFS(fontFile, btoa(binary));
+        doc.addFont(fontFile, "NotoTamil", "normal");
+        doc.addFont(fontFile, "NotoTamil", "bold");
+        return true;
+    } catch (error) {
+        console.warn("Tamil font could not be loaded; generating PDF with a standard font.", error);
+        return false;
     }
-
-    const fontBuffer = await response.arrayBuffer();
-    const bytes = new Uint8Array(fontBuffer);
-    let binary = "";
-
-    for (let i = 0; i < bytes.length; i++) {
-        binary += String.fromCharCode(bytes[i]);
-    }
-
-    const fontBase64 = btoa(binary);
-    const fontFile = "NotoSansTamil-Regular.ttf";
-
-    doc.addFileToVFS(fontFile, fontBase64);
-    doc.addFont(fontFile, "NotoTamil", "normal");
-    doc.addFont(fontFile, "NotoTamil", "bold");
 }
 
 
-function appendPdfAuditTrail(doc, invoiceId, generatedAt) {
+function appendPdfAuditTrail(doc, invoiceId, generatedAt, pdfFont = "helvetica") {
     const totalPages = doc.internal.getNumberOfPages();
     const pageWidth = doc.internal.pageSize.getWidth();
     const pageHeight = doc.internal.pageSize.getHeight();
 
     for (let page = 1; page <= totalPages; page += 1) {
         doc.setPage(page);
-        doc.setFont("NotoTamil", "normal");
+        doc.setFont(pdfFont, "normal");
         doc.setFontSize(7);
         doc.setTextColor(100, 116, 139);
         doc.text(`Generated: ${generatedAt}  |  Invoice ID: ${invoiceId}  |  App: ${APP_VERSION}`, 8, pageHeight - 4);
@@ -1270,6 +1329,7 @@ function buildWhatsAppMessage({ invoiceId, customerName, grandOfferTotal, genera
     ].join("\n");
 }
 
+
 function downloadPdfBlob(pdfBlob, fileName) {
     const downloadUrl = URL.createObjectURL(pdfBlob);
     const link = document.createElement("a");
@@ -1280,6 +1340,7 @@ function downloadPdfBlob(pdfBlob, fileName) {
     link.remove();
     window.setTimeout(() => URL.revokeObjectURL(downloadUrl), 1500);
 }
+
 
 async function sharePdfToWhatsApp(pdfBlob, fileName, message, targetPhone) {
     const pdfFile = new File([pdfBlob], `${fileName}.pdf`, { type: "application/pdf" });
@@ -1534,30 +1595,22 @@ function buildDownloadDocument() {
 }
 
 async function downloadInvoice() {
-    const JsPdf = await ensureJsPdfLoaded();
-    const doc = new JsPdf({
-        orientation: "landscape",
-        unit: "mm",
-        format: "a4"
-    });
-    await registerTamilFont(doc);
-    doc.setFont("NotoTamil", "normal");
-    const { fileNameBase } = buildDownloadDocument();
-
-    renderInvoice();
-
     const selectedItems = getSelectedProducts();
     if (selectedItems.length === 0) {
-        showDownloadToast("No products selected for PDF");
+        showDownloadToast("Add at least one product before downloading the PDF.");
         return;
     }
 
-    try {
-        printButton.disabled = true;
-        printButton.textContent = "Preparing PDF...";
+    printButton.disabled = true;
+    printButton.textContent = "Preparing PDF...";
 
+    try {
         const JsPdf = await ensureJsPdfLoaded();
         const doc = new JsPdf({ orientation: "landscape", unit: "mm", format: "a4" });
+        const pdfFont = await registerTamilFont(doc) ? "NotoTamil" : "helvetica";
+        doc.setFont(pdfFont, "normal");
+        const { fileNameBase } = buildDownloadDocument();
+        renderInvoice();
         const pageWidth = doc.internal.pageSize.getWidth();
         const pageHeight = doc.internal.pageSize.getHeight();
         const margin = 8;
@@ -1571,12 +1624,12 @@ async function downloadInvoice() {
             .map((node) => node.textContent?.trim() || "")
             .filter(Boolean);
 
-        doc.setFont("NotoTamil", "bold");
+        doc.setFont(pdfFont, "bold");
         doc.setFontSize(14);
         doc.text(headerTitle, margin, cursorY);
         cursorY += 5;
 
-        doc.setFont("NotoTamil", "normal");
+        doc.setFont(pdfFont, "normal");
         doc.setFontSize(9);
         headerLines.forEach((line) => {
             doc.text(line, margin, cursorY);
@@ -1584,12 +1637,12 @@ async function downloadInvoice() {
         });
 
         cursorY += 2;
-        doc.setFont("NotoTamil", "bold");
+        doc.setFont(pdfFont, "bold");
         doc.setFontSize(12);
         doc.text("Quotation / Invoice", margin, cursorY);
         cursorY += 6;
 
-        doc.setFont("NotoTamil", "normal");
+        doc.setFont(pdfFont, "normal");
         doc.setFontSize(9);
         const contentWidth = pageWidth - margin * 2;
         const metaGap = 5;
@@ -1662,14 +1715,14 @@ async function downloadInvoice() {
             body: tableBody,
             theme: "grid",
             styles: {
-                font: "NotoTamil",
+                font: pdfFont,
                 fontSize: 8,
                 cellPadding: 1.8,
                 overflow: "linebreak",
                 valign: "top"
             },
             headStyles: {
-                font: "NotoTamil",
+                font: pdfFont,
                 fillColor: [248, 250, 252],
                 textColor: [31, 41, 55],
                 fontStyle: "bold"
@@ -1693,7 +1746,7 @@ async function downloadInvoice() {
             summaryY = margin;
         }
 
-        doc.setFont("NotoTamil", "bold");
+        doc.setFont(pdfFont, "bold");
         doc.setFontSize(10);
         doc.text(`Grand Total Amount: ${formatAmount(grandTotal)}`, margin, summaryY);
         summaryY += 5;
@@ -1702,19 +1755,29 @@ async function downloadInvoice() {
         summaryY += 7;
         doc.setFontSize(10);
         doc.text("Happy Deepavali!!", margin, summaryY);
-        // summaryY += 4;
-        // doc.setFont("NotoTamil", "normal");
-        // doc.setFontSize(9);
-        // doc.text("1. 100% Advance Payment: Full payment must be made in advance to confirm your order.", margin, summaryY);
-        // summaryY += 4;
-        // doc.text("2. Transportation Charges Extra", margin, summaryY);
-        // summaryY += 4;
-        // const termThree = doc.splitTextToSize("3. After payment confirmation, your delivery box will be handed over to the transport office the next day", pageWidth - margin * 2);
-        // doc.text(termThree, margin, summaryY);
+        summaryY += 4;
+        doc.setFont(pdfFont, "normal");
+        doc.setFontSize(9);
+        doc.text("1. 100% Advance Payment: Full payment must be made in advance to confirm your order.", margin, summaryY);
+        summaryY += 4;
+        doc.text("2. Transportation Charges Extra", margin, summaryY);
+        summaryY += 4;
+        const termThree = doc.splitTextToSize("3. After payment confirmation, your delivery box will be handed over to the transport office the next day", pageWidth - margin * 2);
+        doc.text(termThree, margin, summaryY);
 
-        appendPdfAuditTrail(doc, invoiceId, generatedAt);
+        appendPdfAuditTrail(doc, invoiceId, generatedAt, pdfFont);
 
         const pdfBlob = doc.output("blob");
+        console.log("PDF generated:", {
+            type: pdfBlob.type,
+            size: pdfBlob.size,
+            fileName: fileNameBase
+        });
+        
+        if (!pdfBlob || pdfBlob.size === 0) {
+            throw new Error("PDF generation returned an empty file.");
+        }
+        
         downloadPdfBlob(pdfBlob, fileNameBase);
 
         const whatsappMessage = buildWhatsAppMessage({
@@ -1724,16 +1787,39 @@ async function downloadInvoice() {
             generatedAt
         });
 
-        await sharePdfToWhatsApp(pdfBlob, fileNameBase, whatsappMessage, '7010942234');
+       await sharePdfToWhatsApp(pdfBlob, fileNameBase, whatsappMessage, '7010942234');
 
         showDownloadToast("PDF downloaded");
-    } catch {
-        showDownloadToast("PDF generation failed. Please try again.");
+    } catch (error) {
+        console.error("PDF generation failed:", error);
+        showDownloadToast("PDF download failed. Check your connection and try again.");
     } finally {
         printButton.disabled = false;
         printButton.textContent = "Download PDF";
     }
 }
+
+function testPdfDownload() {
+    const blob = new Blob(
+        ["PDF download test"],
+        { type: "text/plain" }
+    );
+
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.download = "seyon-download-test.txt";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    setTimeout(() => URL.revokeObjectURL(url), 5000);
+}
+
+
+
+
 
 function showDownloadToast(message = "Invoice downloaded") {
     if (downloadToastTimer) {
@@ -1777,7 +1863,7 @@ function initBasicSourceProtection() {
 
 accordion.addEventListener("input", (event) => {
     if (event.target.classList.contains("quantity")) {
-        setQuantityValue(Number(event.target.dataset.id), Number(event.target.value) || 0);
+        setQuantityValue(Number(event.target.dataset.id), Math.min(999, Math.max(0, Math.floor(Number(event.target.value) || 0))));
     }
 });
 
@@ -1785,7 +1871,7 @@ accordion.addEventListener("click", (event) => {
     const quantityButton = event.target.closest(".quantity-action");
     if (quantityButton) {
         const productId = quantityButton.dataset.id;
-        const input = event.target.closest("tr")?.querySelector(`input[data-id="${productId}"]`)
+        const input = event.target.closest(".product-card, tr")?.querySelector(`input[data-id="${productId}"]`)
             || document.querySelector(`input[data-id="${productId}"]`);
         if (input) {
             const currentValue = Math.max(0, Number(input.value) || 0);
@@ -1812,7 +1898,7 @@ accordion.addEventListener("click", (event) => {
 
 reviewTableBody.addEventListener("input", (event) => {
     if (event.target.classList.contains("quantity")) {
-        setQuantityValue(Number(event.target.dataset.id), Number(event.target.value) || 0);
+        setQuantityValue(Number(event.target.dataset.id), Math.min(999, Math.max(0, Math.floor(Number(event.target.value) || 0))));
     }
 });
 
@@ -1823,7 +1909,7 @@ reviewTableBody.addEventListener("click", (event) => {
     }
 
     const productId = Number(quantityButton.dataset.id);
-    const input = event.target.closest("tr")?.querySelector(`input[data-id="${productId}"]`);
+    const input = event.target.closest(".product-card, tr")?.querySelector(`input[data-id="${productId}"]`);
     const currentValue = Math.max(0, Number(input?.value) || 0);
     const nextValue = quantityButton.dataset.action === "increase"
         ? currentValue + 1
@@ -1899,3 +1985,76 @@ groupFilterEl.addEventListener("change", () => {
 window.addEventListener("scroll", updateMiniCartScrollState, { passive: true });
 window.addEventListener("resize", updateMiniCartScrollState);
 updateMiniCartScrollState();
+
+// Modern catalog controls and complete WhatsApp order sharing.
+if (sortFilterEl) {
+    sortFilterEl.addEventListener("change", renderAccordion);
+}
+
+const whatsappOrderButton = document.getElementById("whatsappOrderButton");
+
+if (whatsappOrderButton) {
+    whatsappOrderButton.addEventListener("click", () => {
+        const selected = getSelectedProducts();
+
+        if (!selected.length) {
+            alert("Please select at least one product.");
+            return;
+        }
+
+        const customer = getCustomerDetails();
+
+        // Validate required customer details
+        if (!customer.name?.trim()) {
+            alert("Please enter your name.");
+            customerNameEl.focus();
+            return;
+        }
+
+        if (!customer.phone?.trim()) {
+            alert("Please enter your mobile number.");
+            customerPhoneEl.focus();
+            return;
+        }
+
+        // Validate 10-digit Indian mobile number
+        const phone = customer.phone.replace(/\D/g, "");
+
+        if (!/^[6-9]\d{9}$/.test(phone)) {
+            alert("Please enter a valid 10-digit mobile number.");
+            customerPhoneEl.focus();
+            return;
+        }
+
+        if (!customer.address?.trim()) {
+            alert("Please enter your delivery address.");
+            customerAddressEl.focus();
+            return;
+        }
+
+        // Open WhatsApp only after all validations pass
+        const lines = [
+            "*Seyon Crackers & Traders — Order Request*",
+            "Sivakasi | +91 70109 42234",
+            "",
+            ...selected.map(({ product, quantity }, index) => {
+                const price = calculatePrices(product, quantity);
+                return `${index + 1}.(${product.id}) ${product.name} (${product.per || "Unit"}) x ${quantity} = ${formatAmount(price.rowOfferTotal)}`;
+            }),
+            "",
+            `Items: ${selected.length}`,
+            `Total offer amount: ${formatAmount(getCurrentGrandOfferTotal())}`,
+            `Name: ${customer.name.trim()}`,
+            `Mobile: ${phone}`,
+            `Address: ${customer.address.trim()}`,
+            "",
+            "Please confirm availability and delivery charges. Thank you!"
+        ];
+
+        const whatsappUrl =
+            `https://wa.me/917010942234?text=${encodeURIComponent(lines.join("\n"))}`;
+
+        window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    });
+}
+
