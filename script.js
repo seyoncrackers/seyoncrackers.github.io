@@ -14,10 +14,10 @@ const productGroups = [
     {
       name: "SPARKLERS (மத்தாப்புகள்)",
       products: [
-        { id: 8, category: "SPARKLERS (மத்தாப்புகள்)", name: "7CM Electric (7 செ.மீ மின் மத்தாப்பு)", per: "BOX", price: 65, offerRate: 13 },
-        { id: 9, category: "SPARKLERS (மத்தாப்புகள்)", name: "7CM Crackling (7 செ.மீ சத்தம் தரும் மத்தாப்பு)", per: "BOX", price: 70, offerRate: 14 },
-        { id: 10, category: "SPARKLERS (மத்தாப்புகள்)", name: "7CM Green (7 செ.மீ பச்சை மத்தாப்பு)", per: "BOX", price: 80, offerRate: 16 },
-        { id: 11, category: "SPARKLERS (மத்தாப்புகள்)", name: "7CM Red (7 செ.மீ சிவப்பு மத்தாப்பு)", per: "BOX", price: 95, offerRate: 19 },
+        { id: 8, category: "SPARKLERS (மத்தாப்புகள்)", name: "7CM Electric (7 செ.மீ மின் மத்தாப்பு)", per: "BOX", price: 65, offerRate: 13,outOfStock: true },
+        { id: 9, category: "SPARKLERS (மத்தாப்புகள்)", name: "7CM Crackling (7 செ.மீ சத்தம் தரும் மத்தாப்பு)", per: "BOX", price: 70, offerRate: 14,outOfStock: true },
+        { id: 10, category: "SPARKLERS (மத்தாப்புகள்)", name: "7CM Green (7 செ.மீ பச்சை மத்தாப்பு)", per: "BOX", price: 80, offerRate: 16,outOfStock: true },
+        { id: 11, category: "SPARKLERS (மத்தாப்புகள்)", name: "7CM Red (7 செ.மீ சிவப்பு மத்தாப்பு)", per: "BOX", price: 95, offerRate: 19,outOfStock: true },
         { id: 12, category: "SPARKLERS (மத்தாப்புகள்)", name: "10CM Electric (10 செ.மீ மின் மத்தாப்பு)", per: "BOX", price: 115, offerRate: 23 },
         { id: 13, category: "SPARKLERS (மத்தாப்புகள்)", name: "10CM Crackling (10 செ.மீ சத்தம் தரும் மத்தாப்பு)", per: "BOX", price: 130, offerRate: 26 },
         { id: 14, category: "SPARKLERS (மத்தாப்புகள்)", name: "10CM Green (10 செ.மீ பச்சை மத்தாப்பு)", per: "BOX", price: 136, offerRate: 27 },
@@ -231,7 +231,7 @@ const productGroups = [
       products: [
         { id: 118, category: "NIGHT FANCY MULTI SHOTS (நைட் ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "12 SHOTS RIDER (12 ஷாட்ஸ் ரைடர்)", per: "BOX", price: 725, offerRate: 145 },
       { id: 119, category: "NIGHT FANCY MULTI SHOTS (நைட் ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "12 SHOTS MULTICOLOUR (12 ஷாட்ஸ் பல வண்ணங்கள்)", per: "BOX", price: 1100, offerRate: 220, outOfStock: true },
-      { id: 120, category: "NIGHT FANCY MULTI SHOTS (நைட் ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "15 SHOTS MULTICOLOUR (15 ஷாட்ஸ் பல வண்ணங்கள்)", per: "BOX", price: 1500, offerRate: 300 },
+      { id: 120, category: "NIGHT FANCY MULTI SHOTS (நைட் ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "15 SHOTS MULTICOLOUR (15 ஷாட்ஸ் பல வண்ணங்கள்)", per: "BOX", price: 1500, offerRate: 300, outOfStock: true },
       { id: 121, category: "NIGHT FANCY MULTI SHOTS (நைட் ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "25 SHOTS RIDER (25 ஷாட்ஸ் ரைடர்)", per: "BOX", price: 1100, offerRate: 220 },
       { id: 122, category: "NIGHT FANCY MULTI SHOTS (நைட் ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "30 SHOTS MULTICOLOUR A GRADE (30 ஷாட்ஸ் பல வண்ணங்கள் A தரம்)", per: "BOX", price: 2750, offerRate: 550 },
       { id: 123, category: "NIGHT FANCY MULTI SHOTS (நைட் ஃபேன்சி மல்டி ஷாட்ஸ்)", name: "30 SHOTS MULTICOLOUR B GRADE (30 ஷாட்ஸ் பல வண்ணங்கள் B தரம்)", per: "BOX", price: 2250, offerRate: 450 },
