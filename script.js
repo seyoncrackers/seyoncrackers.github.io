@@ -60,7 +60,7 @@ const productGroups = [
       products: [
          { id: 32, category: "PAPER BOMB (பேப்பர் வெடிகள்)", name: "1/4 KG ADIYAL (கால் கிலோ அடியல்)", per: "BOX", price: 250, offerRate: 50 },
       { id: 33, category: "PAPER BOMB (பேப்பர் வெடிகள்)", name: "1/2 KG ADIYAL (அரை கிலோ அடியல்)", per: "BOX", price: 500, offerRate: 100 },
-      { id: 34, category: "PAPER BOMB (பேப்பர் வெடிகள்)", name: "1 KG ADIYAL (ஒரு கிலோ அடியல்)", per: "BOX", price: 1000, offerRate: 200 },
+      { id: 34, category: "PAPER BOMB (பேப்பர் வெடிகள்)", name: "1 KG ADIYAL (ஒரு கிலோ அடியல்)", per: "BOX", price: 1000, offerRate: 200, outOfStock: true },
       { id: 35, category: "PAPER BOMB (பேப்பர் வெடிகள்)", name: "MONEY BANK PAPER BOMB (மணி பேங்க் பேப்பர் வெடி)", per: "BOX", price: 700, offerRate: 140 }
       ]
     },
@@ -75,7 +75,7 @@ const productGroups = [
       { id: 41, category: "FLOWER POTS (பூந்தொட்டிகள்)", name: "FLOWER POTS ASOKA (B GRADE) (அசோகா பூந்தொட்டி B தரம்)", per: "BOX", price: 650, offerRate: 130 },
       { id: 42, category: "FLOWER POTS (பூந்தொட்டிகள்)", name: "COLOR KOTTI (A GRADE) (கலர் கொட்டி A தரம்)", per: "BOX", price: 1260, offerRate: 252 },
       { id: 43, category: "FLOWER POTS (பூந்தொட்டிகள்)", name: "COLOR KOTTI (B GRADE) (கலர் கொட்டி B தரம்)", per: "BOX", price: 1100, offerRate: 220 },
-      { id: 44, category: "FLOWER POTS (பூந்தொட்டிகள்)", name: "COLOR KOTTI MEGA (மெகா கலர் கொட்டி)", per: "BOX", price: 1375, offerRate: 275 },
+      { id: 44, category: "FLOWER POTS (பூந்தொட்டிகள்)", name: "COLOR KOTTI MEGA (மெகா கலர் கொட்டி)", per: "BOX", price: 1375, offerRate: 275, outOfStock: true },
       { id: 45, category: "FLOWER POTS (பூந்தொட்டிகள்)", name: "FLOWER POTS DELUXE (5 PCS) (டீலக்ஸ் பூந்தொட்டி 5 துண்டுகள்)", per: "BOX", price: 1300, offerRate: 260 },
       { id: 46, category: "FLOWER POTS (பூந்தொட்டிகள்)", name: "LUCKY (RED & GREEN) (லக்கி சிவப்பு மற்றும் பச்சை)", per: "BOX", price: 950, offerRate: 190 }
       ]
@@ -142,8 +142,8 @@ const productGroups = [
       products: [
          { id: 74, category: "ROCKETS & HELICOPTERS (ராக்கெட்டுகள் மற்றும் ஹெலிகாப்டர்கள்)", name: "HELICOPTER (ஹெலிகாப்டர்)", per: "BOX", price: 550, offerRate: 110 },
       { id: 75, category: "ROCKETS & HELICOPTERS (ராக்கெட்டுகள் மற்றும் ஹெலிகாப்டர்கள்)", name: "DRONE (ட்ரோன்)", per: "BOX", price: 1000, offerRate: 200 },
-      { id: 76, category: "ROCKETS & HELICOPTERS (ராக்கெட்டுகள் மற்றும் ஹெலிகாப்டர்கள்)", name: "LUNIK ROCKET (லூனிக் ராக்கெட்)", per: "BOX", price: 0, offerRate: 0, outOfStock: true },
-      { id: 77, category: "ROCKETS & HELICOPTERS (ராக்கெட்டுகள் மற்றும் ஹெலிகாப்டர்கள்)", name: "WHISTLING ROCKET (விசில் ராக்கெட்)", per: "BOX", price: 750, offerRate: 150 }
+      { id: 76, category: "ROCKETS & HELICOPTERS (ராக்கெட்டுகள் மற்றும் ஹெலிகாப்டர்கள்)", name: "LUNIK ROCKET (லூனிக் ராக்கெட்)", per: "BOX", price: 0, offerRate: 0 },
+      { id: 77, category: "ROCKETS & HELICOPTERS (ராக்கெட்டுகள் மற்றும் ஹெலிகாப்டர்கள்)", name: "WHISTLING ROCKET (விசில் ராக்கெட்)", per: "BOX", price: 750, offerRate: 150, outOfStock: true }
       ]
     },
     {
@@ -216,7 +216,7 @@ const productGroups = [
       { id: 112, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '3.5inch FANCY B GRADE (3.5 இன்ச் ஃபேன்சி B தரம்)', per: "BOX", price: 1350, offerRate: 270 },
       { id: 113, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '4inch FANCY (4 இன்ச் ஃபேன்சி)', per: "BOX", price: 1750, offerRate: 350 },
       { id: 114, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '4inch FANCY DOUBLE BALL (4 இன்ச் ஃபேன்சி டபுள் பால்)', per: "BOX", price: 2600, offerRate: 520 },
-      { id: 115, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '5inch FANCY (5 இன்ச் ஃபேன்சி)', per: "BOX", price: 5000, offerRate: 1000 }
+      { id: 115, category: "NIGHT FANCY OUTER PIPE (நைட் ஃபேன்சி அவுட்டர் பைப்)", name: '5inch FANCY (5 இன்ச் ஃபேன்சி)', per: "BOX", price: 5000, offerRate: 1000, outOfStock: true }
       ]
     },
     {
