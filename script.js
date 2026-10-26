@@ -289,7 +289,7 @@ const productGroups = [
     {
       name: "NEW ARRIVALS FANCY (புதிய ஃபேன்சி வரவுகள்)",
       products: [
-          { id: 162, category: "NEW ARRIVALS FANCY (புதிய ஃபேன்சி வரவுகள்)", name: "90 whatt (3PCS)", per: "BOX", price: 1000, offerRate: 200 },
+          { id: 162, category: "NEW ARRIVALS FANCY (புதிய ஃபேன்சி வரவுகள்)", name: "90 watts (3PCS)", per: "BOX", price: 1000, offerRate: 200 },
         { id: 148, category: "NEW ARRIVALS FANCY (புதிய ஃபேன்சி வரவுகள்)", name: '4inch FANCY PIPE NIAGARA (4 இன்ச் ஃபேன்சி பைப் நயாகரா)', per: null, price: 2750, offerRate: 550 },
       { id: 149, category: "NEW ARRIVALS FANCY (புதிய ஃபேன்சி வரவுகள்)", name: "GANG BANG 16 SHOTS SPECIAL FUNCTION (கேங் பேங் 16 ஷாட்ஸ் ஸ்பெஷல் ஃபங்ஷன்)", per: null, price: 15000, offerRate: 3000 }
       ]
