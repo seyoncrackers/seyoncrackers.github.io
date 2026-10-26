@@ -289,6 +289,7 @@ const productGroups = [
     {
       name: "NEW ARRIVALS FANCY (புதிய ஃபேன்சி வரவுகள்)",
       products: [
+          { id: 162, category: "NEW ARRIVALS FANCY (புதிய ஃபேன்சி வரவுகள்)", name: "90 whatt (3PCS)", per: "BOX", price: 1000, offerRate: 200 },
         { id: 148, category: "NEW ARRIVALS FANCY (புதிய ஃபேன்சி வரவுகள்)", name: '4inch FANCY PIPE NIAGARA (4 இன்ச் ஃபேன்சி பைப் நயாகரா)', per: null, price: 2750, offerRate: 550 },
       { id: 149, category: "NEW ARRIVALS FANCY (புதிய ஃபேன்சி வரவுகள்)", name: "GANG BANG 16 SHOTS SPECIAL FUNCTION (கேங் பேங் 16 ஷாட்ஸ் ஸ்பெஷல் ஃபங்ஷன்)", per: null, price: 15000, offerRate: 3000 }
       ]
@@ -358,7 +359,7 @@ const updatedPrices = {
     145:[1181,236], 146:[8663,1733], 147:[5828,1166], 148:[2888,578],
     149:[15750,3150], 150:[877,175], 151:[877,175], 152:[877,175],
     153:[1050,210], 154:[1050,210], 155:[1050,210],
-    156:[0,700], 157:[0,950], 158:[0,1600], 159:[0,4000], 160:[0,7000], 161:[0,12000]
+    156:[0,700], 157:[0,950], 158:[0,1600], 159:[0,4000], 160:[0,7000], 161:[0,12000], 162:[1000,200]
   };
   
   productGroups.forEach(group => {
